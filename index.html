@@ -630,10 +630,17 @@ function toggleNotif() {
     btn.classList.add('on');
     lbl.textContent = 'Aktif ✓';
     toast('🔔 Bildirimler açık! Saat başı ekranda bildirim çıkar.');
-    // Gerçek bildirim destekleniyorsa izin iste (iOS PWA veya Android Chrome)
-    if (typeof Notification !== 'undefined' && Notification.permission === 'default') {
-      Notification.requestPermission().catch(function(){});
-    }
+    /* Notification.requestPermission() bazı iOS sürümlerinde
+       undefined döner (Promise değil) → .catch patlar.
+       Bu yüzden try/catch içine alıyoruz. */
+    try {
+      if (typeof Notification !== 'undefined' && Notification.permission === 'default') {
+        var p = Notification.requestPermission();
+        if (p && typeof p.then === 'function') {
+          p.then(function(){}).catch(function(){});
+        }
+      }
+    } catch(e) { /* sessizce geç */ }
   } else {
     btn.classList.remove('on');
     lbl.textContent = 'Bildirimler';
@@ -654,8 +661,9 @@ function notify(msg) {
 function spin(on, tab) {
   var ids = tab ? ['sp-'+tab] : ['sp-tr','sp-wo','sp-al'];
   ids.forEach(function(id) {
-    var el=document.getElementById(id);
-    if(el) { if(on) el.classList.add('on'); else el.classList.remove('on'); }
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (on) { el.classList.add('on'); } else { el.classList.remove('on'); }
   });
 }
 
@@ -675,9 +683,15 @@ setInterval(tick, 1000); tick();
 var aOpen = {h:false, f:false};
 function togAcc(k) {
   aOpen[k] = !aOpen[k];
-  document.getElementById('body-'+k).classList.toggle('open', aOpen[k]);
-  var id = k==='h' ? 'h-chv' : 'f-chv';
-  document.getElementById(id).textContent = aOpen[k] ? '▲' : '▼';
+  var body = document.getElementById('body-'+k);
+  /* classList.toggle 2. argümanı eski iOS'ta çalışmaz → açık add/remove */
+  if (aOpen[k]) {
+    body.classList.add('open');
+  } else {
+    body.classList.remove('open');
+  }
+  var chvId = k==='h' ? 'h-chv' : 'f-chv';
+  document.getElementById(chvId).textContent = aOpen[k] ? '▲' : '▼';
 }
 
 /* Sekmeler */
@@ -736,6 +750,11 @@ function doRefresh() {
     today.toLocaleDateString('tr-TR',{day:'numeric',month:'long'});
 
   renderFolk();  // API gerektirmez
+
+  /* Tarihte Bugün accordion'u başlangıçta açık göster */
+  aOpen.h = true;
+  document.getElementById('body-h').classList.add('open');
+  document.getElementById('h-chv').textContent = '▲';
 
   document.getElementById('l-tr').innerHTML=skels();
   document.getElementById('l-wo').innerHTML=skels();
