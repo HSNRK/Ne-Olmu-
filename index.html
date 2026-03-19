@@ -22,8 +22,7 @@ button{cursor:pointer;border:none;outline:none;background:none}a{text-decoration
 #upd-t{color:#555;margin-left:auto}
 .acc{border-bottom:1px solid #1a1a1a}
 .acc-hd{display:flex;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;user-select:none;-webkit-user-select:none}
-.acc-ico{font-size:18px;flex-shrink:0}
-.acc-lbl{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#666;flex:1}
+.acc-ico{font-size:18px;flex-shrink:0}.acc-lbl{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#666;flex:1}
 .acc-bdg{background:#c0392b;color:#fff;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700}
 .acc-chv{color:#444;font-size:12px;flex-shrink:0}
 .acc-body{display:none;padding:0 14px 14px}.acc-body.open{display:block}
@@ -41,7 +40,7 @@ button{cursor:pointer;border:none;outline:none;background:none}a{text-decoration
 @keyframes pulse{0%,100%{opacity:.6}50%{opacity:.2}}
 .nc{padding:12px 0;border-bottom:1px solid #131313}
 .nc-top{display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap}
-.nc-src{font-size:10px;font-weight:700;color:#fff;background:#c0392b;padding:2px 7px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0}
+.nc-src{font-size:10px;font-weight:700;color:#fff;background:#c0392b;padding:2px 7px;border-radius:4px;text-transform:uppercase;flex-shrink:0}
 .xsrc{background:#000;border:1px solid #333}
 .nc-dt{font-size:10px;color:#333}
 .nc-ti{font-size:14px;font-weight:700;line-height:1.45;color:#e8e4dc;cursor:pointer;margin-bottom:5px}
@@ -55,7 +54,7 @@ button{cursor:pointer;border:none;outline:none;background:none}a{text-decoration
 .ev{margin-bottom:8px;border-radius:10px;overflow:hidden;border:1px solid #1c1c1c;background:#111}
 .ev.hot{border-color:rgba(192,57,43,.4);background:#120a08}
 .ev-hd{display:flex;align-items:center;gap:10px;padding:12px;cursor:pointer;user-select:none;-webkit-user-select:none}
-.ev-ic{font-size:22px;min-width:28px}.ev-mt{flex:1;min-width:0}
+.ev-ic{font-size:20px;min-width:28px}.ev-mt{flex:1;min-width:0}
 .ev-nm{font-size:13px;font-weight:700;display:block;margin-bottom:2px;color:#e8e4dc}
 .ev-dt{color:#3a3a3a;font-size:10px;display:block;margin-bottom:1px}.ev-sh{color:#555;font-size:10px;display:block}
 .ev-bg{color:#fff;padding:3px 8px;border-radius:10px;font-size:9px;font-weight:700;white-space:nowrap;flex-shrink:0}
@@ -84,58 +83,66 @@ button{cursor:pointer;border:none;outline:none;background:none}a{text-decoration
 @keyframes tup{from{opacity:0;transform:translateX(-50%) translateY(8px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 #sbar{font-size:10px;color:#2a2a2a;padding:3px 14px;min-height:18px}
 .empty{color:#444;font-size:13px;padding:24px 0;text-align:center;line-height:1.9}
-.empty small{font-size:11px;color:#2a2a2a}
+.empty small{font-size:11px;color:#2a2a2a;display:block;margin-top:6px}
 .stale{font-size:10px;color:#3a3a20;font-style:italic;padding:4px 0 8px}
-.x-head .n-title{font-size:20px}
 </style>
 </head>
 <body>
 <header id="hdr">
   <img src="data:image/png;base64,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WpPz/tHZdoVIJBIiInebDwPAkSNHun7+85//JplMnmJmam5u9sbjcRGLxZSTOD/v27sU6+kRgh3Z9K9//WuTmT1CCGzevPnjl1566R8GBgaG5HPKht3Q2NjCWbFYTHPWJzva3d3dUVVVNc0tdqyvr69sa2vb29LS8vdE1AygZ0hKZtHa2irOt1tzknHWbs1ly5ZJp/RDx2IxLF68eO73v//9++rr679fUVEBAGSapgaA48ePfwgAra2tBi6yhfe8aGlpMQHgqaee+rVTy5exs9vrsx8yGX7//fc7X3jhhad+9rOf3QQg/JUeZIshDWY2lyxZkv/hhx92MjNLKSd8CL/xxhv/o6WlxWRmH395+sZZqK2tnfXII4+se+211/64d+/etNMvllJyJpPRzCwPHTrEP/rRj64hIlws03dBI7J06VLlLNkeKS8v//aqVatuME1TSimF475wbW3tlbW1tfcuW7bs3nXr1p3q7OzcdeLEib91dna+88YbbxzcsWPHF0TkBjoTWo/jkISLIJFIiDVr1py1W3PdunWz6urqqsvKypZEIpFvlpaW1syaNcuXs/lQSikNANrr9YpEImG88sor/3XDhg07R5KcupgVZscBzaxevfrWF1544ZkVK1bc4USBpZRSaK21aZo6HA6LcDhcsmDBghsB3DgwMIA1a9bI/v7+Yz09PR0DAwMHv/jiizPBYLAQ+LLWbzzHngwJ6WhvXl7ev33yySd/V1FRMSsQCEwrLi6uDIfDpZWVlblbzwDn6AFk05rusDX279+f2bp1639Zv379E2PJ7F0IQ8MhGo3++5aWlv2OsXJh27YtbduWmUxGMrPN2ZOJzonsMpZtZuYXX3xx3ENYSuksjc8LKaW0LcuStm1LKaXNzEMdOH78OP/hD394ZfXq1VcD2UjNRBF3luA5Jr3g0Ucfve+tt97614MHDw6XXDvkZCXNCuySautsJOBSEaiY2XaWg0NwnnXWG0+n09ze3t6zdevWl3784x+vcBu/VOQNobm52cidnFevXn31k08+uf7Pf/7z6zt37uzs6uo6nxYopxO2c6WY2Y7H4/8EjJnAIw5hVk670nmJZ8GyLP7000/1O++8s++Pf/zjc7/97W//Qzgcdg+WcP3YUacIR72Uc+YFikajRlNTkyKiPVu2bNkD4HcACh544IGauXPnXltWVvb1oqKiq4uKisrz8vIiJSUlnqKiIni9bro1+2wpZcF5HnUxkFKqBICZGzlJpVI4deoUent7BwcHB493d3d3JJPJ9zs6Ona9/fbbH27evHkfctwSZjbi8Tgoe+LIqF2uce+rcI/Cu8CBi8G6urorvvnNb0694oorpk2ZMmXG1KlTCwKBgDZNU7S1tf3tl7/85Ss553NdXGjHNdq4ceNPp02bViql5EQioTo7O0/29PQcOXLkyLGtW7ceO3369EkM8+HcQzCamprIUYBx+akTvTFl6EBGAKivr1dCCD4HqZMChyzR2toq3J2aE30s6GTs7Bk6Oai9vZ2c81uG/hiPx3ms7oKTjwHw5dFR3d3dHI/HkZOR+7+5ErqMy7iMy7iMyzg//g+7sEOqcEl5KwAAAABJRU5ErkJggg==" width="50" height="50" alt="" style="flex-shrink:0;border-radius:11px"/>
-  <div style="flex:1;min-width:0"><div class="app-title">Ne Olmuş</div><div class="clk" id="clk">--:--</div></div>
+  <div style="flex:1;min-width:0">
+    <div class="app-title">Ne Olmu&#351;</div>
+    <div class="clk" id="clk">--:--</div>
+  </div>
   <div class="hdr-r">
     <button class="pill" id="btn-n" onclick="toggleNotif()">&#128276; <span id="n-lbl">Bildirimler</span></button>
     <button class="pill" onclick="doRefresh()">&#128260; Yenile</button>
   </div>
 </header>
-<div id="upd">Güncelleme: <span id="upd-t">—</span></div>
+<div id="upd">G&#252;ncelleme: <span id="upd-t">&#8212;</span></div>
 <div class="acc">
   <div class="acc-hd" onclick="togAcc('h')">
-    <span class="acc-ico">&#9203;</span><span class="acc-lbl">Tarihte Bugün</span>
-    <span class="acc-bdg" id="h-bdg">—</span><span class="acc-chv" id="h-chv">&#9660;</span>
+    <span class="acc-ico">&#9203;</span>
+    <span class="acc-lbl">Tarihte Bug&#252;n</span>
+    <span class="acc-bdg" id="h-bdg">&#8212;</span>
+    <span class="acc-chv" id="h-chv">&#9660;</span>
   </div>
   <div class="acc-body" id="body-h"><div id="hist-el"></div></div>
 </div>
 <div class="acc">
   <div class="acc-hd" onclick="togAcc('f')">
-    <span class="acc-ico">&#128336;</span><span class="acc-lbl">Saatli Maarif Takvimi</span>
+    <span class="acc-ico">&#128336;</span>
+    <span class="acc-lbl">Saatli Maarif Takvimi</span>
     <span class="acc-chv" id="f-chv">&#9660;</span>
   </div>
   <div class="acc-body" id="body-f"><div id="folk-el" style="padding-top:6px"></div></div>
 </div>
 <nav id="tabs">
-  <button class="tab on" onclick="goTab('tr',this)">&#127481;&#127479; Türkiye</button>
-  <button class="tab" onclick="goTab('wo',this)">&#127758; Dünya</button>
-  <button class="tab" onclick="goTab('al',this)">&#128240; Tümü</button>
+  <button class="tab on" onclick="goTab('tr',this)">&#127481;&#127479; T&#252;rkiye</button>
+  <button class="tab" onclick="goTab('wo',this)">&#127758; D&#252;nya</button>
+  <button class="tab" onclick="goTab('al',this)">&#128240; T&#252;m&#252;</button>
   <button class="tab" onclick="goTab('xt',this)">&#120143; Twitter</button>
 </nav>
 <div id="main">
   <div id="p-tr">
-    <div class="n-head"><div class="n-title">Türkiye'den Haberler</div><div class="n-cnt" id="cnt-tr" style="display:none"></div><div class="sp" id="sp-tr"></div></div>
+    <div class="n-head"><div class="n-title">T&#252;rkiye'den Haberler</div><div class="n-cnt" id="cnt-tr" style="display:none"></div><div class="sp" id="sp-tr"></div></div>
     <div id="stale-tr"></div><div id="l-tr"></div>
   </div>
   <div id="p-wo" style="display:none">
-    <div class="n-head"><div class="n-title">Dünya'dan Haberler</div><div class="n-cnt" id="cnt-wo" style="display:none"></div><div class="sp" id="sp-wo"></div></div>
-    <p class="note">&#127760; Başlıklar Türkce'ye çevrilmiştir</p>
+    <div class="n-head"><div class="n-title">D&#252;nya'dan Haberler</div><div class="n-cnt" id="cnt-wo" style="display:none"></div><div class="sp" id="sp-wo"></div></div>
+    <p class="note">&#127760; Ba&#351;l&#305;klar T&#252;rk&#231;e'ye &#231;evrilmi&#351;tir</p>
     <div id="stale-wo"></div><div id="l-wo"></div>
   </div>
   <div id="p-al" style="display:none">
-    <div class="n-head"><div class="n-title">Son Dakika – Tümü</div><div class="n-cnt" id="cnt-al" style="display:none"></div><div class="sp" id="sp-al"></div></div>
-    <p class="note" id="al-note" style="display:none">&#127760; Yabancı kaynak başlıkları Türkce'ye çevrilmiştir</p>
+    <div class="n-head"><div class="n-title">T&#252;m&#252;</div><div class="n-cnt" id="cnt-al" style="display:none"></div><div class="sp" id="sp-al"></div></div>
+    <p class="note" id="al-note" style="display:none">&#127760; Yabanc&#305; kaynak ba&#351;l&#305;klar&#305; T&#252;rk&#231;e'ye &#231;evrilmi&#351;tir</p>
     <div id="l-al"></div>
   </div>
   <div id="p-xt" style="display:none">
-    <div class="x-head"><div class="n-title">&#120143; Twitter Akışı</div><button class="btn-xm" onclick="openXDr()">&#9881; Hesaplar</button></div>
+    <div class="x-head">
+      <div class="n-title" style="font-size:20px">&#120143; Twitter Ak&#305;&#351;&#305;</div>
+      <button class="btn-xm" onclick="openXDr()">&#9881; Hesaplar</button>
+    </div>
     <div class="sp" id="sp-xt" style="margin-bottom:10px"></div>
     <div id="l-xt"></div>
   </div>
@@ -145,7 +152,7 @@ button{cursor:pointer;border:none;outline:none;background:none}a{text-decoration
 <div id="xdr" onclick="xDrBg(event)">
   <div id="xpn">
     <p class="xp-t">&#120143; Takip Edilen Hesaplar</p>
-    <p class="xp-s">Maks. 10 hesap · Yabancı dil seçerseniz başlıklar Türkce'ye çevrilir</p>
+    <p class="xp-s">Maks. 10 hesap &#183; Yabanc&#305; dil se&#231;erseniz ba&#351;l&#305;klar &#231;evrilir</p>
     <div id="xa-list"></div>
     <div class="xa-add" id="xa-add">
       <input class="xa-i" id="xa-inp" placeholder="@kullaniciadi" maxlength="30" onkeydown="if(event.key==='Enter')addXA()"/>
@@ -159,649 +166,335 @@ button{cursor:pointer;border:none;outline:none;background:none}a{text-decoration
   </div>
 </div>
 <script>
-/* ── SOURCES ── */
-var TR_FEEDS=[
-  {n:"Hurriyet", u:"https://www.hurriyet.com.tr/rss/anasayfa"},
-  {n:"NTV",      u:"https://www.ntv.com.tr/son-dakika.rss"},
-  {n:"Sozcu",    u:"https://www.sozcu.com.tr/rss.xml"},
-  {n:"Haberturk",u:"https://www.haberturk.com/rss"}
-];
-var WO_FEEDS=[
-  {n:"BBC World", u:"https://feeds.bbci.co.uk/news/world/rss.xml"},
-  {n:"NY Times",  u:"https://rss.nytimes.com/services/xml/rss/nyt/World.xml"},
-  {n:"Sky News",  u:"https://feeds.skynews.com/feeds/rss/world.xml"},
-  {n:"Al Jazeera",u:"https://www.aljazeera.com/xml/rss/all.xml"},
-  {n:"CNN Intl",  u:"https://rss.cnn.com/rss/edition_world.rss"}
-];
-var X_DEF=[
-  {u:"AJENews",    e:true},
-  {u:"cnnnbrk",    e:true},
-  {u:"BBCBreaking",e:true},
-  {u:"steve_hanke",e:true},
-  {u:"ntv",        e:false},
-  {u:"gazetesozcu",e:false},
-  {u:"Hurriyet",   e:false}
-];
+var TR=[{n:"Hurriyet",u:"https://www.hurriyet.com.tr/rss/anasayfa"},{n:"NTV",u:"https://www.ntv.com.tr/son-dakika.rss"},{n:"Sozcu",u:"https://www.sozcu.com.tr/rss.xml"},{n:"Haberturk",u:"https://www.haberturk.com/rss"}];
+var WO=[{n:"BBC",u:"https://feeds.bbci.co.uk/news/world/rss.xml"},{n:"NYTimes",u:"https://rss.nytimes.com/services/xml/rss/nyt/World.xml"},{n:"SkyNews",u:"https://feeds.skynews.com/feeds/rss/world.xml"},{n:"AlJazeera",u:"https://www.aljazeera.com/xml/rss/all.xml"},{n:"CNN",u:"https://rss.cnn.com/rss/edition_world.rss"}];
+var XD=[{u:"AJENews",e:1},{u:"cnnnbrk",e:1},{u:"BBCBreaking",e:1},{u:"steve_hanke",e:1},{u:"ntv",e:0},{u:"gazetesozcu",e:0},{u:"Hurriyet",e:0}];
+var PX=[function(u){return"https://api.allorigins.win/raw?url="+encodeURIComponent(u);},function(u){return"https://corsproxy.io/?"+encodeURIComponent(u);},function(u){return"https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u);}];
 
-/* ── PROXY ── */
-var PX=[
-function(u){return”https://api.allorigins.win/raw?url=”+encodeURIComponent(u);},
-function(u){return”https://corsproxy.io/?”+encodeURIComponent(u);},
-function(u){return”https://api.codetabs.com/v1/proxy?quest=”+encodeURIComponent(u);}
-];
-
-/* ── FETCH (iOS compatible AbortController) ── */
-function xfetch(url,ms){
-var c=new AbortController();
-var t=setTimeout(function(){c.abort();},ms||10000);
+function tf(url,ms){
+var c=new AbortController(),t=setTimeout(function(){c.abort();},ms||10000);
 return fetch(url,{signal:c.signal}).then(function(r){clearTimeout(t);return r;}).catch(function(e){clearTimeout(t);throw e;});
 }
-
-/* ── CACHE ── */
-var NS=“no_”;
-function cGet(k,ms){
-try{
-var r=JSON.parse(localStorage.getItem(NS+k));
-if(r&&(Date.now()-r.t)<(ms||3600000))return r.v;
-}catch(e){}
-return null;
-}
-function cGetOld(k){
-try{var r=JSON.parse(localStorage.getItem(NS+k));return r||null;}catch(e){return null;}
-}
-function cSet(k,v){
-try{localStorage.setItem(NS+k,JSON.stringify({v:v,t:Date.now()}));}catch(e){}
-}
-function cDel(k){
-try{localStorage.removeItem(NS+k);}catch(e){}
-}
-
-/* ── UTILS ── */
-function esc(s){
-var d=document.createElement(“div”);
-d.textContent=String(s||””);
-return d.innerHTML;
-}
-function clean(h){
+function cg(k,ms){try{var r=JSON.parse(localStorage.getItem(“a_”+k));if(r&&(Date.now()-r.t)<(ms||3600000))return r.v;}catch(e){}return null;}
+function cgo(k){try{var r=JSON.parse(localStorage.getItem(“a_”+k));return r||null;}catch(e){return null;}}
+function cs(k,v){try{localStorage.setItem(“a_”+k,JSON.stringify({v:v,t:Date.now()}));}catch(e){}}
+function cd(k){try{localStorage.removeItem(“a_”+k);}catch(e){}}
+function xe(s){var d=document.createElement(“div”);d.textContent=String(s||””);return d.innerHTML;}
+function cl(h){
 if(!h)return””;
 h=h.replace(/<![CDATA[([\s\S]*?)]]>/g,”$1”);
 h=h.replace(/<[^>]+>/g,” “);
-var t=document.createElement(“textarea”);
-t.innerHTML=h;
+var t=document.createElement(“textarea”);t.innerHTML=h;
 return t.value.replace(/\s+/g,” “).trim();
 }
-function ago(d){
-try{
-var dt=new Date(d);
-if(isNaN(dt.getTime()))return””;
-var m=Math.floor((Date.now()-dt.getTime())/60000);
-if(m<1)return”az once”;
-if(m<60)return m+” dk once”;
-if(m<1440)return Math.floor(m/60)+” sa once”;
-return dt.toLocaleDateString(“tr-TR”,{day:“numeric”,month:“short”});
-}catch(e){return””;}
+function ag(d){
+try{var dt=new Date(d);if(isNaN(dt.getTime()))return””;var m=Math.floor((Date.now()-dt.getTime())/60000);if(m<1)return”az once”;if(m<60)return m+” dk”;if(m<1440)return Math.floor(m/60)+” sa”;return dt.toLocaleDateString(“tr-TR”,{day:“numeric”,month:“short”});}catch(e){return””;}
 }
 function fdm(d){return d.toLocaleDateString(“tr-TR”,{day:“numeric”,month:“long”});}
 function fdmy(d){return d.toLocaleDateString(“tr-TR”,{day:“numeric”,month:“long”,year:“numeric”});}
 function sb(m){var el=document.getElementById(“sbar”);if(el)el.textContent=m||””;}
+function sp(id,on){var el=document.getElementById(“sp-”+id);if(el){if(on)el.classList.add(“on”);else el.classList.remove(“on”);}}
 
-/* ── RSS FETCH ── */
-function proxyGet(url,i){
-i=i||0;
-if(i>=PX.length)return Promise.resolve(””);
-return xfetch(PX[i](url),10000)
-.then(function(r){if(!r.ok)throw new Error(“http”);return r.text();})
-.then(function(t){
-if(t&&t.trim()[0]===”{”){try{t=JSON.parse(t).contents||t;}catch(x){}}
-if(!t||t.length<100||(t.indexOf(”<item”)<0&&t.indexOf(”<entry”)<0))throw new Error(“bad”);
+function pg(url,i){
+i=i||0;if(i>=PX.length)return Promise.resolve(””);
+return tf(PX[i](url),10000).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(t){
+if(t&&t.trim().charAt(0)===”{”){try{t=JSON.parse(t).contents||t;}catch(x){}}
+if(!t||t.length<100)throw 0;
+if(t.indexOf(”<item”)<0&&t.indexOf(”<entry”)<0)throw 0;
 return t;
-})
-.catch(function(){return proxyGet(url,i+1);});
+}).catch(function(){return pg(url,i+1);});
 }
-
-function parseRSS(xml,name){
+function prss(xml,name){
 try{
 var doc=new DOMParser().parseFromString(xml,“text/xml”);
 if(doc.querySelector(“parsererror”))doc=new DOMParser().parseFromString(xml,“text/html”);
-var items=Array.prototype.slice.call(doc.querySelectorAll(“item,entry”));
-var out=[];
+var items=Array.prototype.slice.call(doc.querySelectorAll(“item,entry”)),out=[];
 for(var i=0;i<Math.min(items.length,4);i++){
 var item=items[i];
-var te=item.querySelector(“title”);
-var title=clean(te?te.textContent:””);
+var te=item.querySelector(“title”),title=cl(te?te.textContent:””);
 if(!title||title.length<4)continue;
-var url=””;
-var le=item.querySelector(“link”);
-if(le)url=le.getAttribute(“href”)||clean(le.textContent)||””;
-if(!url||url.indexOf(“http”)!==0){
-var ge=item.querySelector(“guid”);
-if(ge){var gv=clean(ge.textContent);if(gv.indexOf(“http”)===0)url=gv;}
-}
+var url=””,le=item.querySelector(“link”);
+if(le)url=le.getAttribute(“href”)||cl(le.textContent)||””;
+if(!url||url.indexOf(“http”)!==0){var ge=item.querySelector(“guid”);if(ge){var gv=cl(ge.textContent);if(gv.indexOf(“http”)===0)url=gv;}}
 var de=item.querySelector(“description”)||item.querySelector(“summary”)||item.querySelector(“content”);
-var summ=de?clean(de.textContent).slice(0,200):””;
+var summ=de?cl(de.textContent).slice(0,200):””;
 var dte=item.querySelector(“pubDate”)||item.querySelector(“published”)||item.querySelector(“updated”);
-var pub=dte?new Date(clean(dte.textContent)):new Date();
-if(isNaN(pub.getTime()))pub=new Date();
+var pub=dte?new Date(cl(dte.textContent)):new Date();if(isNaN(pub.getTime()))pub=new Date();
 out.push({title:title,summary:summ,url:url,source:name,pub:pub.toISOString()});
 }
 return out;
 }catch(e){return[];}
 }
+function ff(src){return pg(src.u).then(function(xml){return xml?prss(xml,src.n):[];});}
 
-function fetchFeed(src){
-return proxyGet(src.u).then(function(xml){return xml?parseRSS(xml,src.n):[];});
-}
-
-/* ── TRANSLATE ── */
-function tr(text){
+function trl(text){
 return new Promise(function(resolve){
 if(!text||text.length<4){resolve(text);return;}
-var clean_t=text.slice(0,400);
-var ck=“tx_”+clean_t.slice(0,18).replace(/[^a-z0-9]/gi,””);
-var hit=cGet(ck,86400000);
-if(hit){resolve(hit);return;}
-xfetch(“https://api.mymemory.translated.net/get?q=”+encodeURIComponent(clean_t)+”&langpair=en|tr”,8000)
-.then(function(r){return r.json();})
-.then(function(d){
-if(d.responseStatus===200&&d.responseData&&d.responseData.translatedText){
-cSet(ck,d.responseData.translatedText);
-resolve(d.responseData.translatedText);
-}else{resolve(text);}
-})
-.catch(function(){resolve(text);});
+var c=text.slice(0,400),ck=“tx_”+c.slice(0,18).replace(/[^a-z0-9]/gi,””);
+var hit=cg(ck,86400000);if(hit){resolve(hit);return;}
+tf(“https://api.mymemory.translated.net/get?q=”+encodeURIComponent(c)+”&langpair=en|tr”,8000)
+.then(function(r){return r.json();}).then(function(d){
+if(d.responseStatus===200&&d.responseData&&d.responseData.translatedText){cs(ck,d.responseData.translatedText);resolve(d.responseData.translatedText);}
+else resolve(text);
+}).catch(function(){resolve(text);});
 });
 }
 
-/* ── LOAD TR NEWS ── */
-function loadTR(){
+function lTR(){
 return new Promise(function(resolve){
-var c=cGet(“tr”);
-if(c){resolve({data:c,stale:false});return;}
-setSp(“tr”,true);
-Promise.all(TR_FEEDS.map(function(f){return fetchFeed(f);}))
-.then(function(res){
-var all=[];
-res.forEach(function(r){all=all.concat(r);});
-all.sort(function(a,b){return new Date(b.pub)-new Date(a.pub);});
-all=all.slice(0,10);
-setSp(“tr”,false);
-if(all.length){cSet(“tr”,all);resolve({data:all,stale:false});}
-else{var o=cGetOld(“tr”);resolve({data:o?o.v:[],stale:true,at:o?o.t:0});}
+var c=cg(“tr”);if(c){resolve({data:c,stale:0});return;}
+sp(“tr”,1);
+Promise.all(TR.map(function(f){return ff(f);})).then(function(res){
+var all=[];res.forEach(function(r){all=all.concat(r);});
+all.sort(function(a,b){return new Date(b.pub)-new Date(a.pub);});all=all.slice(0,10);
+sp(“tr”,0);
+if(all.length){cs(“tr”,all);resolve({data:all,stale:0});}
+else{var o=cgo(“tr”);resolve({data:o?o.v:[],stale:1,at:o?o.t:0});}
 });
 });
 }
-
-/* ── LOAD WORLD NEWS ── */
-function loadWO(){
+function lWO(){
 return new Promise(function(resolve){
-var c=cGet(“wo”);
-if(c){resolve({data:c,stale:false});return;}
-setSp(“wo”,true);
-Promise.all(WO_FEEDS.map(function(f){return fetchFeed(f);}))
-.then(function(res){
-var all=[];
-res.forEach(function(r){all=all.concat(r);});
-all.sort(function(a,b){return new Date(b.pub)-new Date(a.pub);});
-all=all.slice(0,10);
-return Promise.all(all.map(function(item){
-return tr(item.title).then(function(t){
-return{title:t,summary:item.summary,url:item.url,source:item.source,pub:item.pub};
-});
-}));
-})
-.then(function(done){
-setSp(“wo”,false);
-if(done.length){cSet(“wo”,done);resolve({data:done,stale:false});}
-else{var o=cGetOld(“wo”);resolve({data:o?o.v:[],stale:true,at:o?o.t:0});}
+var c=cg(“wo”);if(c){resolve({data:c,stale:0});return;}
+sp(“wo”,1);
+Promise.all(WO.map(function(f){return ff(f);})).then(function(res){
+var all=[];res.forEach(function(r){all=all.concat(r);});
+all.sort(function(a,b){return new Date(b.pub)-new Date(a.pub);});all=all.slice(0,10);
+return Promise.all(all.map(function(item){return trl(item.title).then(function(t){return{title:t,summary:item.summary,url:item.url,source:item.source,pub:item.pub};});}));
+}).then(function(done){
+sp(“wo”,0);
+if(done.length){cs(“wo”,done);resolve({data:done,stale:0});}
+else{var o=cgo(“wo”);resolve({data:o?o.v:[],stale:1,at:o?o.t:0});}
 });
 });
 }
-
-/* ── LOAD HISTORY ── */
-function loadHist(){
+function lHist(){
 return new Promise(function(resolve){
-var d=new Date(),m=d.getMonth()+1,day=d.getDate();
-var ck=“h_”+m+”_”+day;
-var c=cGet(ck,43200000);
-if(c){resolve(c);return;}
-xfetch(“https://tr.wikipedia.org/api/rest_v1/feed/onthisday/events/”+m+”/”+day,10000)
-.then(function(r){return r.json();})
-.then(function(data){
-if(!data.events||!data.events.length)throw new Error(“empty”);
-var evts=data.events
-.map(function(e){return{year:parseInt(e.year)||0,event:e.text};})
-.filter(function(e){return e.year>0&&e.event;})
-.sort(function(a,b){return b.year-a.year;})
-.slice(0,12);
-cSet(ck,evts);resolve(evts);
-})
-.catch(function(){
-xfetch(“https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/”+m+”/”+day,10000)
-.then(function(r){return r.json();})
-.then(function(data){
+var d=new Date(),m=d.getMonth()+1,day=d.getDate(),ck=“h_”+m+”_”+day;
+var c=cg(ck,43200000);if(c){resolve(c);return;}
+tf(“https://tr.wikipedia.org/api/rest_v1/feed/onthisday/events/”+m+”/”+day,10000)
+.then(function(r){return r.json();}).then(function(data){
+if(!data.events||!data.events.length)throw 0;
+var evts=data.events.map(function(e){return{year:parseInt(e.year)||0,event:e.text};}).filter(function(e){return e.year>0&&e.event;}).sort(function(a,b){return b.year-a.year;}).slice(0,12);
+cs(ck,evts);resolve(evts);
+}).catch(function(){
+tf(“https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/”+m+”/”+day,10000)
+.then(function(r){return r.json();}).then(function(data){
 if(!data.events||!data.events.length){resolve([]);return;}
-var picked=data.events
-.map(function(e){return{year:parseInt(e.year)||0,event:e.text};})
-.filter(function(e){return e.year>0;})
-.sort(function(a,b){return b.year-a.year;})
-.slice(0,12);
-Promise.all(picked.map(function(e){
-return tr(e.event).then(function(t){return{year:e.year,event:t};});
-})).then(function(evts){cSet(ck,evts);resolve(evts);});
-})
-.catch(function(){resolve([]);});
+var picked=data.events.map(function(e){return{year:parseInt(e.year)||0,event:e.text};}).filter(function(e){return e.year>0;}).sort(function(a,b){return b.year-a.year;}).slice(0,12);
+Promise.all(picked.map(function(e){return trl(e.event).then(function(t){return{year:e.year,event:t};});})).then(function(evts){cs(ck,evts);resolve(evts);});
+}).catch(function(){resolve([]);});
 });
 });
 }
 
-/* ── X ACCOUNTS ── */
-function getXA(){
-try{var r=localStorage.getItem(“no_xa”);if(r)return JSON.parse(r);}catch(e){}
-return X_DEF.map(function(x){return{u:x.u,e:x.e};});
-}
-function setXA(arr){try{localStorage.setItem(“no_xa”,JSON.stringify(arr));}catch(e){}}
-
-function openXDr(){renderXList();document.getElementById(“xdr”).classList.add(“open”);}
-function closeXDr(){
-document.getElementById(“xdr”).classList.remove(“open”);
-cDel(“xt”);xLoaded=false;loadXT();
-}
+function gXA(){try{var r=localStorage.getItem(“a_xa”);if(r)return JSON.parse(r);}catch(e){}return XD.map(function(x){return{u:x.u,e:x.e};});}
+function sXA(a){try{localStorage.setItem(“a_xa”,JSON.stringify(a));}catch(e){}}
+function openXDr(){rXL();document.getElementById(“xdr”).classList.add(“open”);}
+function closeXDr(){document.getElementById(“xdr”).classList.remove(“open”);cd(“xt”);xLoaded=0;lXT();}
 function xDrBg(ev){if(ev.target===document.getElementById(“xdr”))closeXDr();}
-
-function renderXList(){
-var accts=getXA(),el=document.getElementById(“xa-list”),h=””;
-for(var i=0;i<accts.length;i++){
-var a=accts[i];
-h+=’<div class="xa-r"><span class="xa-n">@’+esc(a.u)+’</span>’;
-h+=’<span class="xa-l">’+(a.e?“Ceviri”:“TR”)+’</span>’;
-h+=’<button class="xa-d" onclick="delXA('+i+')">×</button></div>’;
+function rXL(){
+var a=gXA(),el=document.getElementById(“xa-list”),h=””;
+for(var i=0;i<a.length;i++){
+h+=’<div class="xa-r"><span class="xa-n">@’+xe(a[i].u)+’</span><span class="xa-l">’+(a[i].e?“Ceviri”:“TR”)+’</span>’;
+h+=’<button class="xa-d" onclick="dXA('+i+')">×</button></div>’;
 }
 if(!h)h=’<p style="color:#444;font-size:12px;padding:8px 0">Hesap eklenmedi.</p>’;
 el.innerHTML=h;
-document.getElementById(“xa-add”).style.display=accts.length>=10?“none”:“flex”;
+document.getElementById(“xa-add”).style.display=a.length>=10?“none”:“flex”;
 }
-
 function addXA(){
-var inp=document.getElementById(“xa-inp”);
-var lang=document.getElementById(“xa-sel”).value;
+var inp=document.getElementById(“xa-inp”),sel=document.getElementById(“xa-sel”);
 var raw=inp.value.replace(/^@/,””).trim();
 if(!raw){toast(“Kullanici adi girin”);return;}
-var accts=getXA();
-if(accts.length>=10){toast(“Maksimum 10 hesap”);return;}
-for(var i=0;i<accts.length;i++){if(accts[i].u.toLowerCase()===raw.toLowerCase()){toast(”@”+raw+” zaten listede”);return;}}
-accts.push({u:raw,e:lang===“en”});
-setXA(accts);inp.value=””;renderXList();toast(”@”+raw+” eklendi”);
+var a=gXA();if(a.length>=10){toast(“Maksimum 10”);return;}
+for(var i=0;i<a.length;i++){if(a[i].u.toLowerCase()===raw.toLowerCase()){toast(”@”+raw+” zaten var”);return;}}
+a.push({u:raw,e:sel.value===“en”?1:0});sXA(a);inp.value=””;rXL();toast(”@”+raw+” eklendi”);
 }
-
-function delXA(i){
-var accts=getXA(),rem=accts.splice(i,1);
-setXA(accts);renderXList();
-if(rem.length)toast(”@”+rem[0].u+” silindi”);
-}
-
-var xLoaded=false;
-
-function fetchXT(username){
-var urls=[
-“https://rsshub.app/twitter/user/”+username,
-“https://nitter.net/”+username+”/rss”,
-“https://nitter.privacydev.net/”+username+”/rss”
-];
-return tryXT(username,urls,0);
-}
-function tryXT(u,urls,i){
+function dXA(i){var a=gXA(),rem=a.splice(i,1);sXA(a);rXL();if(rem.length)toast(”@”+rem[0].u+” silindi”);}
+var xLoaded=0;
+function lXFeed(u){var urls=[“https://rsshub.app/twitter/user/”+u,“https://nitter.net/”+u+”/rss”];return tryXF(u,urls,0);}
+function tryXF(u,urls,i){
 if(i>=urls.length)return Promise.resolve([]);
-return proxyGet(urls[i])
-.then(function(xml){
-if(!xml||xml.length<50)throw new Error(“empty”);
-var items=parseRSS(xml,”@”+u);
-if(!items.length)throw new Error(“empty”);
-return items;
-})
-.catch(function(){return tryXT(u,urls,i+1);});
+return pg(urls[i]).then(function(xml){if(!xml||xml.length<50)throw 0;var it=prss(xml,”@”+u);if(!it.length)throw 0;return it;}).catch(function(){return tryXF(u,urls,i+1);});
 }
-
-function loadXT(){
-xLoaded=true;
-var accts=getXA(),el=document.getElementById(“l-xt”);
-if(!accts.length){
-el.innerHTML=’<div class="empty">Hesap eklenmedi.<br><small>Hesaplar butonuna basin.</small></div>’;
-return;
-}
-var c=cGet(“xt”);
-if(c){renderXT(c);return;}
-setSp(“xt”,true);
-el.innerHTML=mkSk(4);
-Promise.all(accts.map(function(a){
-return fetchXT(a.u).then(function(items){
-if(!a.e)return items;
-return Promise.all(items.map(function(item){
-return tr(item.title).then(function(t){
-return{title:t,summary:item.summary,url:item.url,source:item.source,pub:item.pub};
-});
-}));
-});
-})).then(function(res){
-var all=[];
-res.forEach(function(r){if(r)all=all.concat(r);});
-all.sort(function(a,b){return new Date(b.pub)-new Date(a.pub);});
-all=all.slice(0,20);
-setSp(“xt”,false);
-if(all.length){cSet(“xt”,all);renderXT(all);}
-else{
-var old=cGetOld(“xt”);
-if(old&&old.v&&old.v.length){renderXT(old.v);toast(“X: Eski gonderiler”);}
-else{el.innerHTML=’<div class="empty">Twitter yuklenemedi.<br><small>RSSHub/Nitter kisitli olabilir.</small></div>’;}
-}
+function lXT(){
+xLoaded=1;var a=gXA(),el=document.getElementById(“l-xt”);
+if(!a.length){el.innerHTML=’<div class="empty">Hesap eklenmedi.<br><small>Hesaplar butonuna basin.</small></div>’;return;}
+var c=cg(“xt”);if(c){rXT(c);return;}
+sp(“xt”,1);el.innerHTML=mks(4);
+Promise.all(a.map(function(acc){return lXFeed(acc.u).then(function(items){
+if(!acc.e)return items;
+return Promise.all(items.map(function(item){return trl(item.title).then(function(t){return{title:t,summary:item.summary,url:item.url,source:item.source,pub:item.pub};});}));
+});})).then(function(res){
+var all=[];res.forEach(function(r){if(r)all=all.concat(r);});
+all.sort(function(a,b){return new Date(b.pub)-new Date(a.pub);});all=all.slice(0,20);
+sp(“xt”,0);
+if(all.length){cs(“xt”,all);rXT(all);}
+else{var old=cgo(“xt”);if(old&&old.v&&old.v.length){rXT(old.v);toast(“X: eski gonderiler”);}else{el.innerHTML=’<div class="empty">Twitter yuklenemedi.<br><small>RSSHub kisitli olabilir.</small></div>’;}}
 });
 }
 
-/* ── FOLK CALENDAR ── */
 var FE=[
-{id:“zemheri”,  nm:“Zemheri”,         em:“❄️”, sM:1, sD:8,  eM:2, eD:8,  tp:“p”,sh:“En soguk 40 gun (8 Oca-8 Sub)”, fl:“Anadolu geleneginde yilin en soguk kırk gunluk donemidir.”},
-{id:“amansiz”,  nm:“Amansiz Elli”,    em:“🥶”, sM:12,sD:22, eM:2, eD:10, tp:“p”,sh:“En sert 50 gun (22 Ara-10 Sub)”, fl:“Kis gundonumunden baslayan 50 gunluk en sert kis donemidir.”},
-{id:“sevgililer”,nm:“Sevgililer Gunu”,em:“❤️”, m:2,  d:14,             tp:“s”,sh:“14 Subat”,                     fl:“Sevgi ve askin evrensel semboludur.”},
-{id:“cemre1”,   nm:“1.Cemre-Hava”,    em:“🔥”, m:2,  d:19,             tp:“s”,sh:“Hava isinir (19-20 Sub)”,       fl:“Birinci cemre havaya duser. Baharin mujdecisidir.”},
-{id:“cemre2”,   nm:“2.Cemre-Su”,      em:“💧”, m:2,  d:26,             tp:“s”,sh:“Sular isinir (26-27 Sub)”,      fl:“Ikinci cemre suya duser. Pinar ve akarsular isinir.”},
-{id:“cemre3”,   nm:“3.Cemre-Toprak”,  em:“🌱”, m:3,  d:5,              tp:“s”,sh:“Toprak isinir (5-6 Mar)”,       fl:“Son cemre topraga duser. Bahar kapida.”},
-{id:“beldir”,   nm:“Kocakari Soguklari”,em:“👵❄️”,sM:3,sD:11,eM:3,eD:17,tp:“p”,sh:“7 gunluk Mart firtinasi”,      fl:“11-17 Mart arasi devam eden sayili firtina.”},
-{id:“nevruz”,   nm:“Nevruz”,          em:“🌼”, m:3,  d:21,             tp:“s”,sh:“21 Mart - Bahar Yeni Yili”,    fl:“UNESCO kulturel miras. Bahar ekinoksunda kutlanir.”},
-{id:“sitte”,    nm:“Sitte Sevir”,     em:“🌡️”,sM:4, sD:25, eM:5, eD:5,tp:“p”,sh:“Nisan sonu soguk (25 Nis-5 May)”,fl:“Nisan sonu ani soguk dalgasi.”},
-{id:“hamsin”,   nm:“Hamsin”,          em:“🌬️”,sM:4, sD:15, eM:6, eD:4,tp:“p”,sh:“50 gunluk kuru ruzgar”,         fl:“Ilkbahar ile yaz basi arası 50 gunluk sicak ve kuru ruzgar donemidir.”},
-{id:“mayis1”,   nm:“1 Mayis”,         em:“✊”,  m:5,  d:1,              tp:“s”,sh:“Emek Bayrami”,                  fl:“Turkiyede yasal resmi tatil.”},
-{id:“hidrellez”,nm:“Hidrellez”,       em:“🌸”, sM:5, sD:5,  eM:5, eD:6,tp:“p”,sh:“5-6 Mayis Hz.Hizir-Hz.Ilyas”,  fl:“Dilek kagitlari gul dibine gomulur, atesın uzerinden atlanir.”},
-{id:“yazgun”,   nm:“Yaz Gundonumu”,   em:“☀️”, m:6,  d:21,             tp:“s”,sh:“21 Haziran - En uzun gun”,     fl:“Yilin en uzun gunduzudur.”},
-{id:“zafer”,    nm:“Zafer Bayrami”,   em:“🏆”, m:8,  d:30,             tp:“s”,sh:“30 Agustos 1922”,               fl:“Buyuk Taarruz. Turk Kurtulus Savasi donum noktasi.”},
-{id:“mihrican”, nm:“Mihrican”,        em:“🍂”, sM:9, sD:22, eM:9, eD:30,tp:“p”,sh:“Sonbahar ekinoksu”,            fl:“Yaz sebzelerinin hasadinin kapandigi zaman.”},
-{id:“cumhuriyet”,nm:“Cumhuriyet”,     em:“🇹🇷”,m:10, d:29,             tp:“s”,sh:“29 Ekim 1923”,                  fl:“Turkiye Cumhuriyetinin ilan edildigi gun.”},
-{id:“ataturk”,  nm:“Ataturku Anma”,   em:“🏛️”,m:11, d:10,             tp:“s”,sh:“10 Kasim 1938”,                 fl:“Saat 09:05te tum Turkiyede anma torenleri yapilir.”},
-{id:“kisgun”,   nm:“Kis Gundonumu”,   em:“🌙”, m:12, d:21,             tp:“s”,sh:“21 Aralik - En uzun gece”,     fl:“Bu tarihten itibaren gunler uzar.”}
+{id:“zemheri”,nm:“Zemheri”,em:”❄”,sM:1,sD:8,eM:2,eD:8,tp:“p”,sh:“En soguk 40 gun (8 Oca-8 Sub)”,fl:“Anadolu geleneginde yilin en soguk kirk gunluk donemidir.”},
+{id:“amansiz”,nm:“Amansiz Elli”,em:”🥶”,sM:12,sD:22,eM:2,eD:10,tp:“p”,sh:“En sert 50 gun (22 Ara-10 Sub)”,fl:“Kis gundonumunden baslayan 50 gunluk en sert kis donemidir.”},
+{id:“sevgililer”,nm:“Sevgililer Gunu”,em:”❤”,m:2,d:14,tp:“s”,sh:“14 Subat”,fl:“Sevgi ve askin evrensel semboludur.”},
+{id:“cemre1”,nm:“1.Cemre-Hava”,em:”🔥”,m:2,d:19,tp:“s”,sh:“Hava isinir (19-20 Sub)”,fl:“Birinci cemre havaya duser. Baharin mujdecisidir.”},
+{id:“cemre2”,nm:“2.Cemre-Su”,em:”💧”,m:2,d:26,tp:“s”,sh:“Sular isinir (26-27 Sub)”,fl:“Ikinci cemre suya duser.”},
+{id:“cemre3”,nm:“3.Cemre-Toprak”,em:”🌿”,m:3,d:5,tp:“s”,sh:“Toprak isinir (5-6 Mar)”,fl:“Son cemre topraga duser. Bahar kapida.”},
+{id:“beldir”,nm:“Kocakari Soguklari”,em:”*”,sM:3,sD:11,eM:3,eD:17,tp:“p”,sh:“7 gunluk Mart firtinasi”,fl:“11-17 Mart arasi devam eden sayili firtina donemidir.”},
+{id:“nevruz”,nm:“Nevruz”,em:”🌼”,m:3,d:21,tp:“s”,sh:“21 Mart - Bahar Yeni Yili”,fl:“UNESCO kulturel miras. Bahar ekinoksunda kutlanir.”},
+{id:“sitte”,nm:“Sitte Sevir”,em:“S”,sM:4,sD:25,eM:5,eD:5,tp:“p”,sh:“Nisan sonu soguk (25 Nis-5 May)”,fl:“Nisan sonu ani soguk dalgasi.”},
+{id:“mayis1”,nm:“1 Mayis”,em:”✊”,m:5,d:1,tp:“s”,sh:“Emek Bayrami”,fl:“Turkiyede yasal resmi tatil.”},
+{id:“hidrellez”,nm:“Hidrellez”,em:”🌸”,sM:5,sD:5,eM:5,eD:6,tp:“p”,sh:“5-6 Mayis”,fl:“Dilek kagitlari gul dibine gomulur, atesin uzerinden atlanir.”},
+{id:“yazgun”,nm:“Yaz Gundonumu”,em:”☀”,m:6,d:21,tp:“s”,sh:“21 Haziran - En uzun gun”,fl:“Yilin en uzun gunduzudur.”},
+{id:“zafer”,nm:“Zafer Bayrami”,em:”🏆”,m:8,d:30,tp:“s”,sh:“30 Agustos 1922”,fl:“Buyuk Taarruz. Turk Kurtulus Savasi donum noktasi.”},
+{id:“mihrican”,nm:“Mihrican”,em:”🍂”,sM:9,sD:22,eM:9,eD:30,tp:“p”,sh:“Sonbahar ekinoksu”,fl:“Yaz sebzelerinin hasadinin kapandigi zaman.”},
+{id:“cumhuriyet”,nm:“Cumhuriyet”,em:“TR”,m:10,d:29,tp:“s”,sh:“29 Ekim 1923”,fl:“Turkiye Cumhuriyetinin ilan edildigi gun.”},
+{id:“ataturk”,nm:“Ataturku Anma”,em:”🏛”,m:11,d:10,tp:“s”,sh:“10 Kasim 1938”,fl:“Saat 09:05te tum Turkiyede anma torenleri yapilir.”},
+{id:“kisgun”,nm:“Kis Gundonumu”,em:”🌙”,m:12,d:21,tp:“s”,sh:“21 Aralik - En uzun gece”,fl:“Bu tarihten itibaren gunler uzar.”}
 ];
-
-function easterD(y){
-var a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,
-f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),
-h=(19*a+b-d-g+15)%30,ii=Math.floor(c/4),k=c%4,
-l=(32+2*e+2*ii-h-k)%7,mm=Math.floor((a+11*h+22*l)/451),
-mo=Math.floor((h+l-7*mm+114)/31),da=((h+l-7*mm+114)%31)+1;
-return new Date(y,mo-1,da);
-}
-function nthSun(y,m,n){
-var d=new Date(y,m-1,1),c=0;
-while(d.getMonth()===m-1){if(d.getDay()===0&&++c===n)return new Date(d);d.setDate(d.getDate()+1);}
-return null;
-}
-
-function getEvts(today,y){
-var ea=easterD(y),md=nthSun(y,5,2);
-var dyn=[
-{id:“paskalya”,nm:“Paskalya”,    em:“🐣”,m:ea.getMonth()+1,d:ea.getDate(),tp:“s”,sh:y+” Paskalyasi: “+fdm(ea),   fl:“Hz.Isanin dirilisini kutlayan Hiristiyan bayrami.”},
-{id:“anneler”, nm:“Anneler Gunu”,em:“💐”,m:md.getMonth()+1,d:md.getDate(),tp:“s”,sh:“Mayis 2.Pazari: “+fdm(md),   fl:“Her yil Mayisin ikinci Pazarinda kutlanir.”}
-];
-var all=FE.concat(dyn),res=[];
-var tn=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+function eD(y){var a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,ii=Math.floor(c/4),k=c%4,l=(32+2*e+2*ii-h-k)%7,mm=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*mm+114)/31),da=((h+l-7*mm+114)%31)+1;return new Date(y,mo-1,da);}
+function nS(y,m,n){var d=new Date(y,m-1,1),c=0;while(d.getMonth()===m-1){if(d.getDay()===0&&++c===n)return new Date(d);d.setDate(d.getDate()+1);}return null;}
+function gEvts(today,y){
+var ea=eD(y),md=nS(y,5,2);
+var dyn=[{id:“paskalya”,nm:“Paskalya”,em:”🐤”,m:ea.getMonth()+1,d:ea.getDate(),tp:“s”,sh:y+” Paskalyasi: “+fdm(ea),fl:“Hz.Isanin dirilisini kutlayan Hiristiyan bayrami.”},{id:“anneler”,nm:“Anneler Gunu”,em:”💐”,m:md.getMonth()+1,d:md.getDate(),tp:“s”,sh:“Mayis 2.Pazari: “+fdm(md),fl:“Her yil Mayisin ikinci Pazarinda kutlanir.”}];
+var all=FE.concat(dyn),res=[],tn=new Date(today.getFullYear(),today.getMonth(),today.getDate());
 for(var i=0;i<all.length;i++){
 var ev=all[i],s,e;
-if(ev.tp===“s”){
-var yr=y,t0=new Date(yr,ev.m-1,ev.d);
-if(t0<new Date(+tn-15*864e5))yr++;
-s=e=new Date(yr,ev.m-1,ev.d);
-}else{
-var sy=y,ey=y;
-if(ev.sM>ev.eM){if(today.getMonth()+1<=ev.eM)sy–;else ey++;}
-s=new Date(sy,ev.sM-1,ev.sD);e=new Date(ey,ev.eM-1,ev.eD);
-}
+if(ev.tp===“s”){var yr=y,t0=new Date(yr,ev.m-1,ev.d);if(t0<new Date(+tn-15*864e5))yr++;s=e=new Date(yr,ev.m-1,ev.d);}
+else{var sy=y,ey=y;if(ev.sM>ev.eM){if(today.getMonth()+1<=ev.eM)sy–;else ey++;}s=new Date(sy,ev.sM-1,ev.sD);e=new Date(ey,ev.eM-1,ev.eD);}
 var ds=Math.floor((s-tn)/864e5),de=Math.floor((e-tn)/864e5);
-if(ds<=15&&de>=-15){
-var st=“up”;
-if(ev.tp===“p”){if(ds<=0&&de>=0)st=“act”;else if(de<0)st=“old”;}
-else{if(ds===0)st=“act”;else if(ds<0)st=“old”;}
-res.push({ev:ev,s:s,e:e,ds:ds,de:de,st:st});
+if(ds<=15&&de>=-15){var st=“up”;if(ev.tp===“p”){if(ds<=0&&de>=0)st=“act”;else if(de<0)st=“old”;}else{if(ds===0)st=“act”;else if(ds<0)st=“old”;}res.push({ev:ev,s:s,e:e,ds:ds,de:de,st:st});}
 }
-}
-res.sort(function(a,b){return a.ds-b.ds;});
-return res;
+res.sort(function(a,b){return a.ds-b.ds;});return res;
 }
 
-/* ── RENDER UTILS ── */
-function mkSk(n){
-var h=””;n=n||4;
-for(var i=0;i<n;i++){
-h+=’<div style="padding:14px 0;border-bottom:1px solid #111">’;
-h+=’<div class="sk" style="height:10px;width:'+(20+i*10)+'%"></div>’;
-h+=’<div class="sk" style="height:15px;width:95%"></div>’;
-h+=’<div class="sk" style="height:12px;width:'+(55+i*7)+'%"></div>’;
-h+=’<div class="sk" style="height:10px;width:26%"></div></div>’;
+function mks(n){var h=””;n=n||4;for(var i=0;i<n;i++){h+=’<div style="padding:14px 0;border-bottom:1px solid #111"><div class="sk" style="height:10px;width:'+(20+i*10)+'%"></div><div class="sk" style="height:15px;width:95%"></div><div class="sk" style="height:12px;width:'+(55+i*7)+'%"></div><div class="sk" style="height:10px;width:26%"></div></div>’;}return h;}
+function mkCard(it,x){
+var sc=x?‘nc-src xsrc’:‘nc-src’;
+var lk=(it.url&&it.url.indexOf(“http”)===0)?’<a class="nc-lk" href="'+xe(it.url)+'" target="_blank" rel="noopener">Git</a>’:””;
+return ‘<div class="nc"><div class="nc-top"><span class="'+sc+'">’+xe(it.source)+’</span><span class="nc-dt">’+ag(it.pub)+’</span></div><div class="nc-ti" onclick="tSum(this)">’+xe(it.title)+’</div><div class="nc-sm">’+xe(it.summary||“Haberin tamami icin kaynagi ziyaret edin.”)+’</div><div class="nc-ac"><button class="btn-oz" onclick="tSum(this.closest(\'.nc\').querySelector(\'.nc-ti\'))">Ozet</button>’+lk+’</div></div>’;
 }
-return h;
-}
-
-function mkCard(it,xStyle){
-var srcCls=xStyle?‘nc-src xsrc’:‘nc-src’;
-var lk=(it.url&&it.url.indexOf(“http”)===0)
-?’<a class="nc-lk" href="'+esc(it.url)+'" target="_blank" rel="noopener">Habere Git</a>’
-:””;
-var h=’<div class="nc">’;
-h+=’<div class="nc-top"><span class="'+srcCls+'">’+esc(it.source)+’</span><span class="nc-dt">’+ago(it.pub)+’</span></div>’;
-h+=’<div class="nc-ti" onclick="tSum(this)">’+esc(it.title)+’</div>’;
-h+=’<div class="nc-sm">’+esc(it.summary||“Haberin tamami icin kaynagi ziyaret edin.”)+’</div>’;
-h+=’<div class="nc-ac"><button class="btn-oz" onclick="tSum(this.closest(\'.nc\').querySelector(\'.nc-ti\'))">Ozet</button>’+lk+’</div>’;
-h+=’</div>’;
-return h;
-}
-
-function renderNews(result,lid,cntId,staleId){
-var el=document.getElementById(lid);
-var cnt=cntId?document.getElementById(cntId):null;
-var stEl=staleId?document.getElementById(staleId):null;
+function rNews(result,lid,cntId,staleId){
+var el=document.getElementById(lid),cnt=cntId?document.getElementById(cntId):null,stEl=staleId?document.getElementById(staleId):null;
 var items=result.data||[];
-if(stEl){
-stEl.innerHTML=(result.stale&&result.at)
-?’<p class="stale">Son kaydedilen haberler gosteriliyor (’+ago(new Date(result.at))+’).</p>’
-:””;
-}
-if(!items.length){
-el.innerHTML=’<div class="empty">Haber yuklenemedi.<br><small>Yenile butonuna basin.</small></div>’;
-if(cnt)cnt.style.display=“none”;
-return;
-}
+if(stEl)stEl.innerHTML=(result.stale&&result.at)?’<p class="stale">Son kaydedilen haberler (’+ag(new Date(result.at))+’).</p>’:””;
+if(!items.length){el.innerHTML=’<div class="empty">Haber yuklenemedi.<br><small>Yenile butonuna basin.</small></div>’;if(cnt)cnt.style.display=“none”;return;}
 if(cnt){cnt.textContent=items.length+” haber”;cnt.style.display=“inline”;}
-var h=””;
-for(var i=0;i<items.length;i++)h+=mkCard(items[i],false);
-el.innerHTML=h;
+var h=””;for(var i=0;i<items.length;i++)h+=mkCard(items[i],0);el.innerHTML=h;
 }
-
-function renderXT(items){
+function rXT(items){
 var el=document.getElementById(“l-xt”);
 if(!items||!items.length){el.innerHTML=’<div class="empty">Gonderi bulunamadi.</div>’;return;}
-var h=””;
-for(var i=0;i<items.length;i++)h+=mkCard(items[i],true);
-el.innerHTML=h;
+var h=””;for(var i=0;i<items.length;i++)h+=mkCard(items[i],1);el.innerHTML=h;
 }
-
-function tSum(ti){
-var nc=ti.closest(”.nc”),sm=nc.querySelector(”.nc-sm”),btn=nc.querySelector(”.btn-oz”);
-var o=sm.classList.toggle(“on”);
-btn.textContent=o?“Gizle”:“Ozet”;
-}
-
-function renderHist(evts){
+function tSum(ti){var nc=ti.closest(”.nc”),sm=nc.querySelector(”.nc-sm”),btn=nc.querySelector(”.btn-oz”);var o=sm.classList.toggle(“on”);btn.textContent=o?“Gizle”:“Ozet”;}
+function rHist(evts){
 var el=document.getElementById(“hist-el”);
-if(!evts||!evts.length){el.innerHTML=’<p class="empty">Tarihsel veri yuklenemedi.</p>’;return;}
-var h=””;
-for(var i=0;i<evts.length;i++){
-h+=’<div class="hi"><span class="hi-yr">’+evts[i].year+’</span><p class="hi-tx">’+esc(evts[i].event)+’</p></div>’;
+if(!evts||!evts.length){el.innerHTML=’<p class="empty">Veri yuklenemedi.</p>’;return;}
+var h=””;for(var i=0;i<evts.length;i++)h+=’<div class="hi"><span class="hi-yr">’+evts[i].year+’</span><p class="hi-tx">’+xe(evts[i].event)+’</p></div>’;
+h+=’<p style="font-size:10px;color:#2a2a2a;margin-top:10px">Kaynak: Vikipedi</p>’;el.innerHTML=h;
 }
-h+=’<p style="font-size:10px;color:#2a2a2a;margin-top:10px;font-style:italic">Kaynak: Vikipedi</p>’;
-el.innerHTML=h;
-}
-
-function renderFolk(){
-var today=new Date(),y=today.getFullYear();
-var el=document.getElementById(“folk-el”);
-var evts=getEvts(today,y);
-if(!evts.length){el.innerHTML=’<p class="empty">Bu donemde yakin takvim olayi yok.</p>’;return;}
+function rFolk(){
+var today=new Date(),y=today.getFullYear(),el=document.getElementById(“folk-el”),evts=gEvts(today,y);
+if(!evts.length){el.innerHTML=’<p class="empty">Bu donemde takvim olayi yok.</p>’;return;}
 function sc(s){return s===“act”?”#c0392b”:s===“up”?”#e67e22”:”#333”;}
-function sl(ev){
-if(ev.st===“act”)return ev.ev.tp===“p”?(ev.de===0?“Bugun bitiyor”:ev.de+” gun daha”):“Bugun!”;
-if(ev.st===“up”)return ev.ds+” gun sonra”;
-return Math.abs(ev.de)+” gun once bitti”;
-}
+function sl(ev){if(ev.st===“act”)return ev.ev.tp===“p”?(ev.de===0?“Bugun bitiyor”:ev.de+” gun daha”):“Bugun!”;if(ev.st===“up”)return ev.ds+” gun sonra”;return Math.abs(ev.de)+” gun once bitti”;}
 var h=””;
 for(var i=0;i<evts.length;i++){
-var ev=evts[i],e=ev.ev;
-var ds=ev.ev.tp===“p”?fdm(ev.s)+” - “+fdm(ev.e):fdmy(ev.s);
-h+=’<div class=“ev’+(ev.st===“act”?” hot”:””)+’” id=“evc-’+e.id+’”>’;
-h+=’<div class="ev-hd" onclick="tEv(\''+e.id+'\')">’;
-h+=’<span class="ev-ic">’+e.em+’</span>’;
-h+=’<div class="ev-mt"><strong class="ev-nm">’+esc(e.nm)+’</strong>’;
-h+=’<span class="ev-dt">’+ds+’</span><span class="ev-sh">’+esc(e.sh)+’</span></div>’;
-h+=’<span class="ev-bg" style="background:'+sc(ev.st)+'">’+sl(ev)+’</span>’;
-h+=’<span class="ev-cv" id="ecv-'+e.id+'">▼</span></div>’;
-h+=’<div class="ev-bd" id="evb-'+e.id+'"><p class="ev-fl">’+esc(e.fl)+’</p></div></div>’;
+var ev=evts[i],e=ev.ev,ds=ev.ev.tp===“p”?fdm(ev.s)+” - “+fdm(ev.e):fdmy(ev.s);
+h+=’<div class=“ev’+(ev.st===“act”?” hot”:””)+’”><div class="ev-hd" onclick="tEv(\''+e.id+'\')">’;
+h+=’<span class="ev-ic">’+e.em+’</span><div class="ev-mt"><strong class="ev-nm">’+xe(e.nm)+’</strong><span class="ev-dt">’+ds+’</span><span class="ev-sh">’+xe(e.sh)+’</span></div>’;
+h+=’<span class="ev-bg" style="background:'+sc(ev.st)+'">’+sl(ev)+’</span><span class="ev-cv" id="ecv-'+e.id+'">▼</span></div>’;
+h+=’<div class="ev-bd" id="evb-'+e.id+'"><p class="ev-fl">’+xe(e.fl)+’</p></div></div>’;
 }
 el.innerHTML=h;
 }
+function tEv(id){var b=document.getElementById(“evb-”+id),c=document.getElementById(“ecv-”+id);var o=b.classList.toggle(“on”);c.innerHTML=o?”▲”:”▼”;}
 
-function tEv(id){
-var b=document.getElementById(“evb-”+id),c=document.getElementById(“ecv-”+id);
-var o=b.classList.toggle(“on”);c.innerHTML=o?”▲”:”▼”;
-}
-
-/* ── NOTIFICATIONS ── */
-var notifOn=false;
+var notifOn=0;
 function toggleNotif(){
-notifOn=!notifOn;
+notifOn=notifOn?0:1;
 var btn=document.getElementById(“btn-n”),lbl=document.getElementById(“n-lbl”);
-if(notifOn){
-btn.classList.add(“on”);lbl.textContent=“Aktif ✓”;
-toast(“Bildirimler acik! Saat basi ekranda bildirim cikar.”);
-try{
-if(typeof Notification!==“undefined”&&Notification.permission===“default”){
-var p=Notification.requestPermission();
-if(p&&typeof p.then===“function”)p.then(function(){}).catch(function(){});
+if(notifOn){btn.classList.add(“on”);lbl.textContent=“Aktif”;toast(“Bildirimler acik!”);try{if(typeof Notification!==“undefined”&&Notification.permission===“default”){var p=Notification.requestPermission();if(p&&typeof p.then===“function”)p.then(function(){}).catch(function(){});}}catch(x){}}
+else{btn.classList.remove(“on”);lbl.textContent=“Bildirimler”;toast(“Bildirimler kapandi.”);}
 }
-}catch(x){}
-}else{
-btn.classList.remove(“on”);lbl.textContent=“Bildirimler”;
-toast(“Bildirimler kapatildi.”);
-}
-}
-function doNotify(msg){
-if(!notifOn)return;
-toast(msg);
-try{if(typeof Notification!==“undefined”&&Notification.permission===“granted”)new Notification(“Ne Olmus”,{body:msg});}catch(x){}
-}
+function doNotify(msg){if(!notifOn)return;toast(msg);try{if(typeof Notification!==“undefined”&&Notification.permission===“granted”)new Notification(“Ne Olmus”,{body:msg});}catch(x){}}
 
-/* ── UI HELPERS ── */
-function setSp(tab,on){
-var el=document.getElementById(“sp-”+tab);
-if(el){if(on)el.classList.add(“on”);else el.classList.remove(“on”);}
-}
-function setUpd(){
-document.getElementById(“upd-t”).textContent=new Date().toLocaleTimeString(“tr-TR”,{hour:“2-digit”,minute:“2-digit”});
-}
-function tickClock(){
-document.getElementById(“clk”).textContent=new Date().toLocaleTimeString(“tr-TR”,{hour:“2-digit”,minute:“2-digit”});
-}
+function setUpd(){document.getElementById(“upd-t”).textContent=new Date().toLocaleTimeString(“tr-TR”,{hour:“2-digit”,minute:“2-digit”});}
+function tickClock(){document.getElementById(“clk”).textContent=new Date().toLocaleTimeString(“tr-TR”,{hour:“2-digit”,minute:“2-digit”});}
 setInterval(tickClock,1000);tickClock();
 
-var accOpen={h:false,f:false};
+var accO={h:0,f:0};
 function togAcc(k){
-accOpen[k]=!accOpen[k];
-var b=document.getElementById(“body-”+k);
-if(accOpen[k])b.classList.add(“open”);else b.classList.remove(“open”);
-document.getElementById(k===“h”?“h-chv”:“f-chv”).innerHTML=accOpen[k]?”▲”:”▼”;
+accO[k]=accO[k]?0:1;
+var b=document.getElementById(“body-”+k);if(accO[k])b.classList.add(“open”);else b.classList.remove(“open”);
+document.getElementById(k===“h”?“h-chv”:“f-chv”).innerHTML=accO[k]?”▲”:”▼”;
 }
-
 function goTab(id,btn){
-[“tr”,“wo”,“al”,“xt”].forEach(function(t){
-document.getElementById(“p-”+t).style.display=t===id?“block”:“none”;
-});
+[“tr”,“wo”,“al”,“xt”].forEach(function(t){document.getElementById(“p-”+t).style.display=t===id?“block”:“none”;});
 document.querySelectorAll(”.tab”).forEach(function(b){b.classList.remove(“on”);});
 btn.classList.add(“on”);
-if(id===“xt”&&!xLoaded)loadXT();
+if(id===“xt”&&!xLoaded)lXT();
 }
-
 var tTmr=null;
-function toast(msg){
-var el=document.getElementById(“toast”);
-el.textContent=msg;el.classList.add(“on”);
-clearTimeout(tTmr);
-tTmr=setTimeout(function(){el.classList.remove(“on”);},4000);
-}
+function toast(msg){var el=document.getElementById(“toast”);el.textContent=msg;el.classList.add(“on”);clearTimeout(tTmr);tTmr=setTimeout(function(){el.classList.remove(“on”);},4000);}
 
-/* ── REFRESH ── */
 function doRefresh(){
 toast(“Guncelleniyor…”);
-[“tr”,“wo”,“xt”].forEach(function(k){cDel(k);});
-var d=new Date();cDel(“h_”+(d.getMonth()+1)+”_”+d.getDate());
-[“l-tr”,“l-wo”,“l-al”,“l-xt”].forEach(function(id){document.getElementById(id).innerHTML=mkSk();});
+[“tr”,“wo”,“xt”].forEach(function(k){cd(k);});
+var d=new Date();cd(“h_”+(d.getMonth()+1)+”_”+d.getDate());
+[“l-tr”,“l-wo”,“l-al”,“l-xt”].forEach(function(id){document.getElementById(id).innerHTML=mks();});
 [“stale-tr”,“stale-wo”].forEach(function(id){document.getElementById(id).innerHTML=””;});
-document.getElementById(“hist-el”).innerHTML=mkSk(3);
-[“tr”,“wo”,“al”,“xt”].forEach(function(t){setSp(t,true);});
-xLoaded=false;
-Promise.all([loadTR(),loadWO(),loadHist()]).then(function(res){
+document.getElementById(“hist-el”).innerHTML=mks(3);
+[“tr”,“wo”,“al”,“xt”].forEach(function(t){sp(t,1);});xLoaded=0;
+Promise.all([lTR(),lWO(),lHist()]).then(function(res){
 var t=res[0],w=res[1],hist=res[2];
-renderNews(t,“l-tr”,“cnt-tr”,“stale-tr”);
-renderNews(w,“l-wo”,“cnt-wo”,“stale-wo”);
+rNews(t,“l-tr”,“cnt-tr”,“stale-tr”);rNews(w,“l-wo”,“cnt-wo”,“stale-wo”);
 var all=(t.data||[]).concat(w.data||[]).sort(function(a,b){return new Date(b.pub)-new Date(a.pub);}).slice(0,15);
-renderNews({data:all,stale:false},“l-al”,“cnt-al”,””);
-var an=document.getElementById(“al-note”);
-if(an)an.style.display=(w.data||[]).length>0?“block”:“none”;
-renderHist(hist);
-[“tr”,“wo”,“al”,“xt”].forEach(function(t){setSp(t,false);});
-setUpd();
+rNews({data:all,stale:0},“l-al”,“cnt-al”,””);
+var an=document.getElementById(“al-note”);if(an)an.style.display=(w.data||[]).length>0?“block”:“none”;
+rHist(hist);
+[“tr”,“wo”,“al”,“xt”].forEach(function(t){sp(t,0);});setUpd();
 var tl=(t.data||[]).length,wl=(w.data||[]).length;
 sb(tl+” TR + “+wl+” Dunya”);
-toast(tl+wl>0?tl+” TR + “+wl+” haber yuklendi”:“Haber alinamadi. Baglantinizi kontrol edin.”);
+toast(tl+wl>0?tl+” TR + “+wl+” haber”:“Haber alinamadi. Baglantinizi kontrol edin.”);
 doNotify(tl+” TR + “+wl+” Dunya haberi guncellendi.”);
 });
 }
 
-/* ── INIT ── */
-(function(){
+window.addEventListener(“DOMContentLoaded”,function(){
 var today=new Date();
 document.getElementById(“h-bdg”).textContent=today.toLocaleDateString(“tr-TR”,{day:“numeric”,month:“long”});
-renderFolk();
-accOpen.h=true;
-document.getElementById(“body-h”).classList.add(“open”);
-document.getElementById(“h-chv”).innerHTML=”▲”;
-[“l-tr”,“l-wo”,“l-al”].forEach(function(id){document.getElementById(id).innerHTML=mkSk();});
-[“tr”,“wo”,“al”].forEach(function(t){setSp(t,true);});
-sb(“Yukleniyor…”);
-Promise.all([loadTR(),loadWO(),loadHist()]).then(function(res){
+rFolk();
+accO.h=1;document.getElementById(“body-h”).classList.add(“open”);document.getElementById(“h-chv”).innerHTML=”▲”;
+[“l-tr”,“l-wo”,“l-al”].forEach(function(id){document.getElementById(id).innerHTML=mks();});
+[“tr”,“wo”,“al”].forEach(function(t){sp(t,1);});sb(“Yukleniyor…”);
+Promise.all([lTR(),lWO(),lHist()]).then(function(res){
 var t=res[0],w=res[1],hist=res[2];
-renderNews(t,“l-tr”,“cnt-tr”,“stale-tr”);
-renderNews(w,“l-wo”,“cnt-wo”,“stale-wo”);
+rNews(t,“l-tr”,“cnt-tr”,“stale-tr”);rNews(w,“l-wo”,“cnt-wo”,“stale-wo”);
 var all=(t.data||[]).concat(w.data||[]).sort(function(a,b){return new Date(b.pub)-new Date(a.pub);}).slice(0,15);
-renderNews({data:all,stale:false},“l-al”,“cnt-al”,””);
-var an=document.getElementById(“al-note”);
-if(an)an.style.display=(w.data||[]).length>0?“block”:“none”;
-renderHist(hist);
-[“tr”,“wo”,“al”].forEach(function(t){setSp(t,false);});
-setUpd();
+rNews({data:all,stale:0},“l-al”,“cnt-al”,””);
+var an=document.getElementById(“al-note”);if(an)an.style.display=(w.data||[]).length>0?“block”:“none”;
+rHist(hist);[“tr”,“wo”,“al”].forEach(function(t){sp(t,0);});setUpd();
 var tl=(t.data||[]).length,wl=(w.data||[]).length;
 sb(tl+” TR + “+wl+” Dunya”+(t.stale||w.stale?” (onceki saatten)”:””));
 setInterval(function(){
-[“tr”,“wo”,“xt”].forEach(function(k){cDel(k);});
-xLoaded=false;
-Promise.all([loadTR(),loadWO()]).then(function(r2){
+[“tr”,“wo”,“xt”].forEach(function(k){cd(k);});xLoaded=0;
+Promise.all([lTR(),lWO()]).then(function(r2){
 var t2=r2[0],w2=r2[1];
-renderNews(t2,“l-tr”,“cnt-tr”,“stale-tr”);
-renderNews(w2,“l-wo”,“cnt-wo”,“stale-wo”);
+rNews(t2,“l-tr”,“cnt-tr”,“stale-tr”);rNews(w2,“l-wo”,“cnt-wo”,“stale-wo”);
 var a=(t2.data||[]).concat(w2.data||[]).sort(function(a,b){return new Date(b.pub)-new Date(a.pub);}).slice(0,15);
-renderNews({data:a,stale:false},“l-al”,“cnt-al”,””);
-setUpd();
-var tl2=(t2.data||[]).length,wl2=(w2.data||[]).length;
-sb(tl2+” TR + “+wl2+” Dunya”);
-doNotify(“Saatlik guncelleme: “+tl2+” TR + “+wl2+” Dunya haberi.”);
-if(document.getElementById(“p-xt”).style.display!==“none”)loadXT();
+rNews({data:a,stale:0},“l-al”,“cnt-al”,””);setUpd();
+var tl2=(t2.data||[]).length,wl2=(w2.data||[]).length;sb(tl2+” TR + “+wl2+” Dunya”);
+doNotify(“Saatlik: “+tl2+” TR + “+wl2+” Dunya.”);
+if(document.getElementById(“p-xt”).style.display!==“none”)lXT();
 });
 },3600000);
 });
-}());
-
+});
 </script>
+
 </body>
 </html>
