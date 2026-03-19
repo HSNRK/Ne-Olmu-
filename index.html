@@ -336,8 +336,15 @@ function loadTR() {
       all.sort(function(a,b) { return b.pubDate - a.pubDate; });
       all = all.slice(0, 10);
       spin(false, 'tr');
-      if (all.length) CACHE.set('tr_v6', all);
-      resolve(all);
+      if (all.length) {
+        CACHE.set('tr_v6', all);
+        resolve(all);
+      } else {
+        /* Yeni veri gelmedi → eski önbellekten göster */
+        var stale = CACHE.getStale('tr_v6');
+        sbar(stale ? 'TR: Eski haberler gösteriliyor (yeni veri alınamadı)' : 'TR haberleri alınamadı');
+        resolve(stale || []);
+      }
     });
   });
 }
@@ -396,8 +403,14 @@ function loadWorld() {
 
       Promise.all(trPromises).then(function(translated) {
         spin(false, 'wo');
-        if (translated.length) CACHE.set('wo_v6', translated);
-        resolve(translated);
+        if (translated.length) {
+          CACHE.set('wo_v6', translated);
+          resolve(translated);
+        } else {
+          var stale = CACHE.getStale('wo_v6');
+          sbar(stale ? 'Dünya: Eski haberler gösteriliyor (yeni veri alınamadı)' : 'Dünya haberleri alınamadı');
+          resolve(stale || []);
+        }
       });
     });
   });
@@ -738,7 +751,11 @@ function doRefresh() {
     setUpd();
     var msg = tr.length+' TR + '+wo.length+' Dünya haberi yüklendi';
     sbar(msg);
-    toast('✅ '+msg);
+    if (tr.length === 0 && wo.length === 0) {
+      toast('⚠️ Haberler alınamadı. Eski haberler gösteriliyor.');
+    } else {
+      toast('✅ '+msg);
+    }
     notify('Haberler güncellendi.');
   });
 }
