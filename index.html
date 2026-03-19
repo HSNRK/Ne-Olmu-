@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
 <meta name="theme-color" content="#0a0a0a"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 <meta name="apple-mobile-web-app-title" content="Ne Olmuş"/>
 <title>Ne Olmuş</title>
 <style>
@@ -15,43 +14,51 @@ html,body{background:#0a0a0a;color:#e8e4dc;font-family:-apple-system,BlinkMacSys
 button{cursor:pointer;border:none;outline:none;background:none}
 a{text-decoration:none;-webkit-tap-highlight-color:transparent}
 
+/* ─── HEADER ─── */
 #hdr{display:flex;align-items:center;gap:10px;padding:12px 14px 10px;background:#0a0a0a;position:sticky;top:0;z-index:200;border-bottom:1px solid #1a1a1a}
 .app-title{font-size:26px;font-weight:800;letter-spacing:-.5px;color:#fff;line-height:1}
-.hdr-clock{font-size:11px;color:#555;margin-top:2px}
+.clock{font-size:11px;color:#555;margin-top:2px}
 .hdr-r{display:flex;gap:7px;margin-left:auto;flex-shrink:0}
 .pill{display:flex;align-items:center;gap:5px;background:#1c1c1e;color:#e8e4dc;padding:7px 11px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;border:none}
+.pill.on{background:#1a2e1a;color:#6abf6a}
 
-#upd-bar{display:flex;align-items:center;padding:5px 14px;font-size:11px;color:#3a3a3a;border-bottom:1px solid #151515;gap:6px}
-#upd-time{color:#555;margin-left:auto}
+/* ─── UPDATE BAR ─── */
+#upd{display:flex;padding:5px 14px;font-size:11px;color:#333;border-bottom:1px solid #141414;gap:6px}
+#upd-t{color:#555;margin-left:auto}
 
+/* ─── ACCORDION ─── */
 .acc{border-bottom:1px solid #1a1a1a}
 .acc-hd{display:flex;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;user-select:none;-webkit-user-select:none}
-.acc-icon{font-size:18px;flex-shrink:0}
+.acc-ico{font-size:18px;flex-shrink:0}
 .acc-lbl{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#666;flex:1}
-.acc-badge{background:#c0392b;color:#fff;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700}
-.acc-chev{color:#444;font-size:12px;flex-shrink:0}
+.acc-bdg{background:#c0392b;color:#fff;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700}
+.acc-chv{color:#444;font-size:12px;flex-shrink:0}
 .acc-body{display:none;padding:0 14px 14px}
 .acc-body.open{display:block}
 
+/* ─── TABS ─── */
 #tabs{display:flex;padding:0 14px;background:#0a0a0a;border-bottom:1px solid #1a1a1a;position:sticky;top:67px;z-index:100}
 .tab{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:12px 4px;background:transparent;border:none;border-bottom:2px solid transparent;color:#555;font-size:13px;font-weight:600;transition:color .15s,border-color .15s}
 .tab.on{border-bottom-color:#c0392b;color:#fff}
 
+/* ─── MAIN ─── */
 #main{padding:0 14px 30px}
+.n-head{display:flex;align-items:center;gap:10px;padding:16px 0 12px;border-bottom:1px solid #1a1a1a;margin-bottom:4px}
+.n-title{font-size:22px;font-weight:800;color:#fff}
+.spin{display:none;width:14px;height:14px;border:2px solid #333;border-top-color:#c0392b;border-radius:50%;animation:spin .7s linear infinite}
+.spin.on{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-.n-head{display:flex;align-items:center;gap:10px;padding:16px 0 12px;border-bottom:1px solid #1a1a1a;margin-bottom:2px}
-.n-title{font-size:22px;font-weight:800;letter-spacing:-.3px;color:#fff}
+/* ─── SKELETON ─── */
+.sk-wrap{padding:14px 0;border-bottom:1px solid #111}
+.sk{background:#181818;border-radius:5px;animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.6}50%{opacity:.2}}
 
-/* SKELETON */
-.sk-wrap{padding:14px 0;border-bottom:1px solid #131313}
-.sk{background:#1a1a1a;border-radius:5px;animation:pulse 1.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:.6}50%{opacity:.25}}
-
-/* NEWS CARD */
+/* ─── NEWS CARD ─── */
 .nc{padding:13px 0;border-bottom:1px solid #131313;display:flex;gap:10px;align-items:flex-start}
 .nc-n{min-width:22px;height:22px;border-radius:4px;background:#c0392b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;flex-shrink:0;margin-top:3px}
 .nc-b{flex:1;min-width:0}
-.nc-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.nc-top{display:flex;align-items:center;gap:6px;margin-bottom:4px;flex-wrap:wrap}
 .nc-src{font-size:9px;font-weight:700;color:#c0392b;text-transform:uppercase;letter-spacing:.05em}
 .nc-dt{font-size:9px;color:#333}
 .nc-ti{font-size:14px;font-weight:700;line-height:1.45;color:#e8e4dc;cursor:pointer;margin-bottom:5px}
@@ -61,12 +68,12 @@ a{text-decoration:none;-webkit-tap-highlight-color:transparent}
 .btn-oz{background:#1a1a1a;color:#777;padding:4px 10px;border-radius:14px;font-size:11px;font-weight:600;border:none;cursor:pointer}
 .nc-lk{font-size:11px;color:#c0392b;font-weight:600}
 
-/* HISTORY */
+/* ─── HISTORY ─── */
 .hi{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid #141414}
 .hi-yr{min-width:48px;font-size:20px;font-weight:800;color:#c0392b;flex-shrink:0;line-height:1.2}
 .hi-tx{font-size:13px;line-height:1.75;color:#b0aca4}
 
-/* FOLK */
+/* ─── FOLK CALENDAR ─── */
 .ev{margin-bottom:8px;border-radius:10px;overflow:hidden;border:1px solid #1c1c1c;background:#111}
 .ev.hot{border-color:rgba(192,57,43,.4);background:#120a08}
 .ev-hd{display:flex;align-items:center;gap:10px;padding:12px;cursor:pointer;user-select:none;-webkit-user-select:none}
@@ -82,21 +89,18 @@ a{text-decoration:none;-webkit-tap-highlight-color:transparent}
 .ev-fl{font-size:12px;line-height:1.85;color:#888;margin-top:10px}
 .ev-tg{display:inline-block;margin-top:6px;background:#1a1a1a;border-radius:3px;padding:2px 6px;font-size:9px;color:#444}
 
-/* TOAST */
+/* ─── TOAST ─── */
 #toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:9999;
 background:#fff;color:#111;padding:10px 20px;border-radius:20px;
-font-size:13px;font-weight:600;box-shadow:0 4px 24px rgba(0,0,0,.5);
-display:none;white-space:nowrap}
-#toast.on{display:block;animation:tup .25s ease}
-
-.empty{color:#444;font-size:13px;padding:20px 0;text-align:center;line-height:1.7}
-.err-note{font-size:10px;color:#333;margin-top:6px}
-
+font-size:13px;font-weight:600;box-shadow:0 4px 24px rgba(0,0,0,.6);
+display:none;white-space:nowrap;animation:tup .25s ease}
+#toast.on{display:block}
 @keyframes tup{from{opacity:0;transform:translateX(-50%) translateY(8px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.d1{animation:blink 1.2s 0s infinite;margin-right:2px}
-.d2{animation:blink 1.2s .2s infinite;margin-right:2px}
-.d3{animation:blink 1.2s .4s infinite}
+
+/* ─── STATUS ─── */
+#status-bar{font-size:10px;color:#333;padding:4px 14px;min-height:20px}
+
+.empty{color:#444;font-size:13px;padding:24px 0;text-align:center;line-height:1.8}
 </style>
 
 </head>
@@ -117,271 +121,372 @@ display:none;white-space:nowrap}
   </svg>
   <div style="flex:1">
     <div class="app-title">Ne Olmuş</div>
-    <div class="hdr-clock" id="hdr-clock">--:--</div>
+    <div class="clock" id="clk">--:--</div>
   </div>
   <div class="hdr-r">
-    <button class="pill" id="btn-notif" onclick="handleNotif()">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-      </svg>
-      <span id="notif-lbl">Bildirimler</span>
+    <button class="pill" id="btn-n" onclick="toggleNotif()">
+      🔔 <span id="n-lbl">Bildirimler</span>
     </button>
     <button class="pill" onclick="doRefresh()">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
-      </svg>
-      Yenile
+      🔄 Yenile
     </button>
   </div>
 </header>
 
-<div id="upd-bar">Güncelleme: <span id="upd-time">—</span></div>
+<div id="upd">Güncelleme: <span id="upd-t">—</span></div>
+
+<!-- TARİHTE BUGÜN -->
 
 <div class="acc">
-  <div class="acc-hd" onclick="toggleAcc('hist')">
-    <span class="acc-icon">⏳</span>
+  <div class="acc-hd" onclick="togAcc('h')">
+    <span class="acc-ico">⏳</span>
     <span class="acc-lbl">Tarihte Bugün</span>
-    <span class="acc-badge" id="hist-badge">—</span>
-    <span class="acc-chev" id="chev-hist">▼</span>
+    <span class="acc-bdg" id="h-bdg">—</span>
+    <span class="acc-chv" id="h-chv">▼</span>
   </div>
-  <div class="acc-body" id="body-hist">
-    <div id="hist-inner"><div class="empty"><span class="d1">●</span><span class="d2">●</span><span class="d3">●</span></div></div>
+  <div class="acc-body" id="body-h">
+    <div id="hist"></div>
   </div>
 </div>
 
+<!-- MAARİF TAKVİMİ -->
+
 <div class="acc">
-  <div class="acc-hd" onclick="toggleAcc('folk')">
-    <span class="acc-icon">🕰</span>
+  <div class="acc-hd" onclick="togAcc('f')">
+    <span class="acc-ico">🕰</span>
     <span class="acc-lbl">Saatli Maarif Takvimi</span>
-    <span class="acc-chev" id="chev-folk">▼</span>
+    <span class="acc-chev" id="f-chv">▼</span>
   </div>
-  <div class="acc-body" id="body-folk">
-    <div id="folk-inner" style="padding-top:6px"></div>
+  <div class="acc-body" id="body-f">
+    <div id="folk" style="padding-top:6px"></div>
   </div>
 </div>
+
+<!-- TABS -->
 
 <nav id="tabs">
-  <button class="tab on" onclick="switchTab('tr',this)">🇹🇷 Türkiye</button>
-  <button class="tab"    onclick="switchTab('wo',this)">🌍 Dünya</button>
-  <button class="tab"    onclick="switchTab('al',this)">📰 Tümü</button>
+  <button class="tab on" onclick="goTab('tr',this)">🇹🇷 Türkiye</button>
+  <button class="tab"    onclick="goTab('wo',this)">🌍 Dünya</button>
+  <button class="tab"    onclick="goTab('al',this)">📰 Tümü</button>
 </nav>
 
 <div id="main">
   <div id="p-tr">
-    <div class="n-head"><div class="n-title">Türkiye'den Haberler</div></div>
+    <div class="n-head">
+      <div class="n-title">Türkiye'den Haberler</div>
+      <div class="spin" id="sp-tr"></div>
+    </div>
     <div id="l-tr"></div>
   </div>
+
   <div id="p-wo" style="display:none">
-    <div class="n-head"><div class="n-title">Dünya'dan Haberler</div></div>
+    <div class="n-head">
+      <div class="n-title">Dünya'dan Haberler</div>
+      <div class="spin" id="sp-wo"></div>
+    </div>
     <p style="font-size:10px;color:#3a5a3a;font-style:italic;margin-bottom:10px">🌐 Başlıklar Türkçe'ye çevrilmiştir</p>
     <div id="l-wo"></div>
   </div>
+
   <div id="p-al" style="display:none">
-    <div class="n-head"><div class="n-title">Tüm Haberler</div></div>
+    <div class="n-head">
+      <div class="n-title">Tüm Haberler</div>
+      <div class="spin" id="sp-al"></div>
+    </div>
     <div id="l-al"></div>
   </div>
 </div>
 
+<div id="status-bar"></div>
 <div id="toast"></div>
 
 <script>
-/* ═══════════════════════════════════════════
-   Ne Olmuş — Güvenilir RSS + Ücretsiz çeviri
-   Proxy: allorigins.win (en güvenilir ücretsiz)
-   Çeviri: MyMemory API
+/* ════════════════════════════════════════════
+   Ne Olmuş — v4  (Nisan 2025)
+   RSS: allorigins /raw  +  corsproxy.io  +  codetabs
+   Çeviri: MyMemory (ücretsiz)
    Tarih: Wikipedia TR/EN
-═══════════════════════════════════════════ */
+════════════════════════════════════════════ */
 
 // ── KAYNAKLAR ──────────────────────────────
-const TR_FEEDS=[
-  {n:'Hürriyet',   u:'https://www.hurriyet.com.tr/rss/anasayfa'},
-  {n:'NTV',        u:'https://www.ntv.com.tr/son-dakika.rss'},
-  {n:'Sözcü',      u:'https://www.sozcu.com.tr/rss.xml'},
-  {n:'Habertürk',  u:'https://www.haberturk.com/rss'},
+const TR = [
+  {n:'Hürriyet',  u:'https://www.hurriyet.com.tr/rss/anasayfa'},
+  {n:'NTV',       u:'https://www.ntv.com.tr/son-dakika.rss'},
+  {n:'Sözcü',     u:'https://www.sozcu.com.tr/rss.xml'},
+  {n:'Habertürk', u:'https://www.haberturk.com/rss'},
 ];
-const WO_FEEDS=[
+const WO = [
   {n:'BBC World',  u:'https://feeds.bbci.co.uk/news/world/rss.xml'},
   {n:'Al Jazeera', u:'https://www.aljazeera.com/xml/rss/all.xml'},
   {n:'DW',         u:'https://rss.dw.com/xml/rw_en_top'},
-  {n:'Sky News',   u:'https://feeds.skynews.com/feeds/rss/world.xml'},
   {n:'Reuters',    u:'https://feeds.reuters.com/reuters/worldNews'},
+  {n:'Sky News',   u:'https://feeds.skynews.com/feeds/rss/world.xml'},
 ];
 
 // ── ÖNBELLEK ───────────────────────────────
-const S={
-  get:(k,ms=3600000)=>{try{const r=JSON.parse(sessionStorage.getItem('no_'+k));if(r&&Date.now()-r.t<ms)return r.v;}catch{}return null;},
-  set:(k,v)=>{try{sessionStorage.setItem('no_'+k,JSON.stringify({v,t:Date.now()}));}catch{}},
-  del:(k)=>{try{sessionStorage.removeItem('no_'+k);}catch{}}
+const C = {
+  get(k, ms=3600000){
+    try{const r=JSON.parse(sessionStorage.getItem('no4_'+k));if(r&&Date.now()-r.t<ms)return r.v;}catch{}return null;
+  },
+  set(k,v){try{sessionStorage.setItem('no4_'+k,JSON.stringify({v,t:Date.now()}));}catch{}},
+  del(k){try{sessionStorage.removeItem('no4_'+k);}catch{}}
 };
 
-// ── ARAÇLAR ───────────────────────────────
-const esc=s=>{const d=document.createElement('div');d.textContent=s||'';return d.innerHTML;};
-const strip=h=>{try{const d=document.createElement('div');d.innerHTML=h||'';return(d.textContent||'').replace(/\s+/g,' ').trim();}catch{return '';}};
-const fmtDate=d=>{try{const dt=d instanceof Date?d:new Date(d);if(isNaN(dt))return '';return dt.toLocaleDateString('tr-TR',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});}catch{return '';}};
-const fmtDM=d=>d.toLocaleDateString('tr-TR',{day:'numeric',month:'long'});
-const fmtDMY=d=>d.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+// ── ARAÇLAR ────────────────────────────────
+const esc = s => {
+  const d=document.createElement('div');
+  d.textContent=String(s||'');
+  return d.innerHTML;
+};
 
-// ── RSS ÇEKME (allorigins proxy) ──────────
-async function fetchRSS(src){
-  // allorigins.win → içeriği JSON olarak döner {contents: "...xml..."}
-  const proxyUrl=`https://api.allorigins.win/get?url=${encodeURIComponent(src.u)}&timestamp=${Date.now()}`;
+// CDATA'yı düz metne çevir + HTML strip
+function cleanText(raw){
+  if(!raw) return '';
+  // CDATA unwrap
+  let s = raw.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1');
+  // HTML tags kaldır
+  s = s.replace(/<[^>]+>/g,' ');
+  // Entities decode
+  const tmp=document.createElement('textarea');
+  tmp.innerHTML=s;
+  s=tmp.value;
+  return s.replace(/\s+/g,' ').trim();
+}
+
+function fmtDate(d){
   try{
-    const r=await fetch(proxyUrl,{signal:AbortSignal.timeout(10000)});
-    if(!r.ok)return[];
-    const j=await r.json();
-    const xml=j.contents||'';
-    if(!xml||xml.length<100)return[];
-    return parseRSS(xml,src.n);
-  }catch(e){
-    console.warn('RSS fetch error',src.n,e.message);
-    return[];
+    const dt = (d instanceof Date) ? d : new Date(d);
+    if(isNaN(dt.getTime())) return '';
+    return dt.toLocaleDateString('tr-TR',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+  }catch{return '';}
+}
+const fmtDM  = d => d.toLocaleDateString('tr-TR',{day:'numeric',month:'long'});
+const fmtDMY = d => d.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+
+// ── RSS ÇEKME ──────────────────────────────
+// allorigins /raw → doğrudan XML metni döner (JSON wrapper yok)
+// corsproxy.io   → doğrudan içerik döner
+// codetabs       → doğrudan içerik döner
+
+async function fetchRaw(url){
+  const proxies = [
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+    `https://corsproxy.io/?${encodeURIComponent(url)}`,
+    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+  ];
+
+  for(const p of proxies){
+    try{
+      const r = await fetch(p, {signal: AbortSignal.timeout(9000)});
+      if(!r.ok) continue;
+      const text = await r.text();
+      // Geçerli RSS/Atom mı?
+      if(text && text.length > 200 && (text.includes('<item') || text.includes('<entry'))){
+        return text;
+      }
+    }catch(e){
+      // bir sonraki proxy'e geç
+    }
   }
+  return '';
 }
 
-function parseRSS(xml,name){
+function parseRSS(xml, name){
   try{
-    const doc=new DOMParser().parseFromString(xml,'text/xml');
-    // Atom veya RSS
-    const items=[...doc.querySelectorAll('item,entry')];
-    return items.slice(0,3).map(item=>{
-      const title=strip(item.querySelector('title')?.textContent||'');
-      // link için önce textContent, yoksa href attr
-      let link='';
-      const linkEl=item.querySelector('link');
-      if(linkEl){link=linkEl.getAttribute('href')||linkEl.textContent?.trim()||'';}
-      const desc=strip(
-        item.querySelector('description,summary,content\\:encoded,[type="html"]')?.textContent||
-        item.querySelector('content')?.textContent||''
-      ).slice(0,180);
-      const pub=item.querySelector('pubDate,published,updated')?.textContent||'';
-      return{title,summary:desc,url:link,source:name,pubDate:new Date(pub||Date.now())};
-    }).filter(i=>i.title&&i.title.length>4);
-  }catch{return[];}
+    const doc = new DOMParser().parseFromString(xml,'text/xml');
+    if(doc.querySelector('parsererror')){
+      // XML hatalı ise text/html ile tekrar parse et
+      const doc2 = new DOMParser().parseFromString(xml,'text/html');
+      return parseItems(doc2, name);
+    }
+    return parseItems(doc, name);
+  }catch{return [];}
 }
 
-// ── TÜM TÜRK HABERLERİ ────────────────────
+function parseItems(doc, name){
+  const items = [...doc.querySelectorAll('item,entry')];
+  return items.slice(0,3).map(item => {
+    // Başlık
+    const titleEl = item.querySelector('title');
+    const title = cleanText(titleEl?.textContent || '');
+
+    // Link
+    let url = '';
+    const linkEl = item.querySelector('link');
+    if(linkEl){
+      url = linkEl.getAttribute('href') || cleanText(linkEl.textContent) || '';
+    }
+    // Atom <link rel="alternate">
+    if(!url){
+      const alt = item.querySelector('link[rel="alternate"]');
+      url = alt?.getAttribute('href') || '';
+    }
+
+    // Özet
+    const descEl = item.querySelector(
+      'description, summary, [type="html"], content'
+    );
+    const summary = cleanText(descEl?.textContent || '').slice(0, 200);
+
+    // Tarih
+    const dateEl = item.querySelector('pubDate, published, updated, dc\\:date');
+    const pubDate = new Date(dateEl?.textContent || Date.now());
+
+    return {title, summary, url, source: name, pubDate};
+  }).filter(i => i.title && i.title.length > 4);
+}
+
+async function fetchFeed(src){
+  const xml = await fetchRaw(src.u);
+  if(!xml) return [];
+  return parseRSS(xml, src.n);
+}
+
+// ── TÜRK HABERLERİ ─────────────────────────
 async function loadTR(){
-  const c=S.get('tr');if(c)return c;
-  showLoadMsg('l-tr','Haberler yükleniyor…');
-  const res=await Promise.allSettled(TR_FEEDS.map(s=>fetchRSS(s)));
-  const all=res.filter(r=>r.status==='fulfilled').flatMap(r=>r.value)
-    .filter(i=>i.title).sort((a,b)=>b.pubDate-a.pubDate).slice(0,8);
-  if(all.length)S.set('tr',all);
+  const c = C.get('tr'); if(c) return c;
+  setSpinner(['sp-tr','sp-al'], true);
+  const res = await Promise.allSettled(TR.map(s => fetchFeed(s)));
+  const all = res
+    .filter(r => r.status==='fulfilled')
+    .flatMap(r => r.value)
+    .filter(i => i.title)
+    .sort((a,b) => b.pubDate - a.pubDate)
+    .slice(0,8);
+  setSpinner(['sp-tr','sp-al'], false);
+  if(all.length) C.set('tr', all);
   return all;
 }
 
-// ── TÜM DÜNYA HABERLERİ + ÇEVİRİ ─────────
+// ── DÜNYA HABERLERİ ────────────────────────
 async function translate(text){
-  if(!text||text.length<4)return text;
-  const clean=text.slice(0,400);
-  const ck='tx_'+encodeURIComponent(clean.slice(0,20)).replace(/%/g,'');
-  const hit=S.get(ck,86400000);if(hit)return hit;
+  if(!text || text.length < 4) return text;
+  const clean = text.slice(0, 400);
+  const ck = 'tx_' + clean.slice(0,20).replace(/\W/g,'');
+  const hit = C.get(ck, 86400000); if(hit) return hit;
   try{
-    const r=await fetch(
+    const r = await fetch(
       `https://api.mymemory.translated.net/get?q=${encodeURIComponent(clean)}&langpair=en|tr`,
-      {signal:AbortSignal.timeout(7000)}
+      {signal: AbortSignal.timeout(7000)}
     );
-    const d=await r.json();
-    if(d.responseStatus===200&&d.responseData?.translatedText){
-      const res=d.responseData.translatedText;
-      S.set(ck,res);return res;
+    const d = await r.json();
+    if(d.responseStatus===200 && d.responseData?.translatedText){
+      const res = d.responseData.translatedText;
+      C.set(ck, res);
+      return res;
     }
   }catch{}
   return text;
 }
 
 async function loadWorld(){
-  const c=S.get('wo');if(c)return c;
-  showLoadMsg('l-wo','Dünya haberleri yükleniyor…');
-  const res=await Promise.allSettled(WO_FEEDS.map(s=>fetchRSS(s)));
-  const raw=res.filter(r=>r.status==='fulfilled').flatMap(r=>r.value)
-    .filter(i=>i.title).sort((a,b)=>b.pubDate-a.pubDate).slice(0,8);
-  if(!raw.length)return[];
-  const translated=await Promise.all(raw.map(async i=>({...i,title:await translate(i.title)})));
-  S.set('wo',translated);
+  const c = C.get('wo'); if(c) return c;
+  setSpinner(['sp-wo','sp-al'], true);
+  const res = await Promise.allSettled(WO.map(s => fetchFeed(s)));
+  const raw = res
+    .filter(r => r.status==='fulfilled')
+    .flatMap(r => r.value)
+    .filter(i => i.title)
+    .sort((a,b) => b.pubDate - a.pubDate)
+    .slice(0,8);
+  const translated = await Promise.all(
+    raw.map(async i => ({...i, title: await translate(i.title)}))
+  );
+  setSpinner(['sp-wo','sp-al'], false);
+  if(translated.length) C.set('wo', translated);
   return translated;
 }
 
-// ── TARİHTE BUGÜN ─────────────────────────
+// ── TARİHTE BUGÜN ──────────────────────────
 async function loadHist(){
-  const t=new Date(),m=t.getMonth()+1,d=t.getDate();
-  const ck=`hist_${m}_${d}`;
-  const c=S.get(ck,43200000);if(c)return c;
-  // Türkçe Vikipedi
+  const t = new Date(), m = t.getMonth()+1, d = t.getDate();
+  const ck = `hist_${m}_${d}`;
+  const c = C.get(ck, 43200000); if(c) return c;
+
+  // Türkçe Wikipedia
   try{
-    const r=await fetch(`https://tr.wikipedia.org/api/rest_v1/feed/onthisday/events/${m}/${d}`,
-      {signal:AbortSignal.timeout(8000)});
-    const data=await r.json();
+    const r = await fetch(
+      `https://tr.wikipedia.org/api/rest_v1/feed/onthisday/events/${m}/${d}`,
+      {signal: AbortSignal.timeout(8000)}
+    );
+    const data = await r.json();
     if(data.events?.length){
-      const evts=data.events
-        .map(e=>({year:parseInt(e.year)||0,event:e.text}))
-        .filter(e=>e.year>0&&e.event)
-        .sort((a,b)=>b.year-a.year)   // yakın tarihten uzağa
+      const evts = data.events
+        .map(e => ({year: parseInt(e.year)||0, event: e.text}))
+        .filter(e => e.year>0 && e.event)
+        .sort((a,b) => b.year - a.year)  // yakın tarihten uzağa
         .slice(0,12);
-      S.set(ck,evts);return evts;
+      C.set(ck, evts);
+      return evts;
     }
   }catch{}
-  // İngilizce Vikipedi + çeviri
+
+  // İngilizce Wikipedia + çeviri
   try{
-    const r=await fetch(`https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${m}/${d}`,
-      {signal:AbortSignal.timeout(8000)});
-    const data=await r.json();
+    const r = await fetch(
+      `https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${m}/${d}`,
+      {signal: AbortSignal.timeout(8000)}
+    );
+    const data = await r.json();
     if(data.events?.length){
-      const picked=data.events
-        .map(e=>({year:parseInt(e.year)||0,event:e.text}))
-        .filter(e=>e.year>0&&e.event)
-        .sort((a,b)=>b.year-a.year)
+      const picked = data.events
+        .map(e => ({year: parseInt(e.year)||0, event: e.text}))
+        .filter(e => e.year>0)
+        .sort((a,b) => b.year - a.year)
         .slice(0,12);
-      const evts=await Promise.all(picked.map(async e=>({year:e.year,event:await translate(e.event)})));
-      S.set(ck,evts);return evts;
+      const evts = await Promise.all(
+        picked.map(async e => ({year: e.year, event: await translate(e.event)}))
+      );
+      C.set(ck, evts);
+      return evts;
     }
   }catch{}
-  return[];
+  return [];
 }
 
 // ═══════════════ HALK TAKVİMİ ═════════════
 const FE=[
-  {id:'zemheri',name:'Zemheri',emoji:'❄️',sM:1,sD:8,eM:2,eD:8,tp:'p',cat:'kış',sh:'Yılın en soğuk 40 günü (8 Ocak–8 Şubat)',fl:'Zemheri, Anadolu geleneğinde yılın en soğuk kırk günlük dönemidir. Ocak\'ın sekizinden Şubat\'ın sekizine kadar sürer. Dondurucu soğuklar, kar fırtınaları ve tipi hüküm sürer. En soğuk güne "göbek zemheri" denir.'},
-  {id:'amansiz',name:'Amansız Elli',emoji:'🥶',sM:12,sD:22,eM:2,eD:10,tp:'p',cat:'kış',sh:'Kışın en sert 50 günü (22 Aralık–10 Şubat)',fl:'Amansız Elli, kış gündönümünden (22 Aralık) başlayan 50 günlük en sert kış dönemidir. Zemheri\'yi de kapsar; bitiminde baharın müjdecisi Cemreler başlar.'},
-  {id:'sevgililer',name:'Sevgililer Günü',emoji:'❤️',m:2,d:14,tp:'s',cat:'kutlama',sh:'14 Şubat',fl:'Her yıl 14 Şubat\'ta kutlanan Sevgililer Günü, sevgi ve aşkın evrensel sembolüdür.'},
-  {id:'bede',name:'Bede Yeli (Vade Yeli)',emoji:'💨',sM:2,sD:19,eM:2,eD:21,tp:'p',cat:'hava',sh:'Şubat sonunda sert rüzgar (19–21 Şubat)',fl:'"Bede yeli eser, kışın borcunu öder." Kış bu rüzgarla son borcunu ödeyerek gider.'},
-  {id:'cemre1',name:'1. Cemre — Havaya Düşer',emoji:'🔥',m:2,d:19,tp:'s',cat:'doğa',sh:'Birinci cemre: Hava ısınır (19–20 Şubat)',fl:'Cemre, baharın gelişini müjdeleyen sembolik ateş parçalarıdır. Birinci cemre havaya düşer. Cemre inancı Orta Asya Türk kültüründen gelir.'},
-  {id:'cemre2',name:'2. Cemre — Suya Düşer',emoji:'💧',m:2,d:26,tp:'s',cat:'doğa',sh:'İkinci cemre: Sular ısınır (26–27 Şubat)',fl:'İkinci cemre suya düşer. Pınar ve akarsuların ısınmaya başladığına inanılır; donmuş dereler çözülür.'},
-  {id:'cemre3',name:'3. Cemre — Toprağa Düşer',emoji:'🌱',m:3,d:5,tp:'s',cat:'doğa',sh:'Üçüncü cemre: Toprak ısınır (5–6 Mart)',fl:'Üçüncü ve son cemre toprağa düşer. Toprak bu günden sonra ısınır. "Cemre toprağa düştü, bahar kapıda" denir.'},
-  {id:'gavur',name:'Gâvurun Küfrü',emoji:'⚡',m:3,d:9,tp:'s',cat:'hava',sh:'Mart\'ta beklenmedik ani soğuk',fl:'"Mart kapıdan baktırır, kazma kürek yaktırır."'},
-  {id:'beldir',name:'Kocakarı Soğukları',emoji:'👵❄️',sM:3,sD:11,eM:3,eD:17,tp:'p',cat:'hava',sh:'Mart\'ta 7 günlük fırtına (11–17 Mart)',fl:'"Beldir aciz, yer gök taciz." "Üçü şubatta, dördü martta." Efsaneye göre ihtiyar bir kadın bahar gelince koyunlarını çıkarmış; Mart\'tan ödünç alınan bu günler onu cezalandırmıştır.'},
-  {id:'nevruz',name:'Nevruz',emoji:'🌼',m:3,d:21,tp:'s',cat:'kutlama',sh:'21 Mart — Baharın Yeni Yılı',fl:'Nevruz (Farsça: "yeni gün"), bahar ekinoksunda kutlanan kadim bayramdır. Türkler, Kürtler, Farslar ve pek çok Orta Asya halkı tarafından kutlanır. UNESCO somut olmayan kültürel miras listesindedir.'},
-  {id:'mart29',name:"Mart'ın İki Dokuzu",emoji:'🌪️',m:3,d:29,tp:'s',cat:'hava',sh:'29 Mart — beklenmedik fırtına',fl:'"Martın yirmi dokuzu, gelir baharın ağuzu."'},
-  {id:'abril',name:'Abrıl Beşi Fırtınası',emoji:'⛈️',m:4,d:5,tp:'s',cat:'hava',sh:'5 Nisan fırtınası',fl:'Nisan\'ın beşinde gelen sert hava olgusudur.'},
-  {id:'kirlangic',name:'İlk Kırlangıç Günü',emoji:'🐦',m:4,d:15,tp:'s',cat:'doğa',sh:'Kırlangıçların dönüşü',fl:'"Kırlangıç geldi mi, bahar geldi." Kırlangıç yuvası olan evlere bereket gelir.'},
-  {id:'sitte',name:'Sitte Sevir',emoji:'🌡️',sM:4,sD:25,eM:5,eD:5,tp:'p',cat:'hava',sh:'Nisan sonu ani soğuk (25 Nisan–5 Mayıs)',fl:'Nisan sonu ile Mayıs başında görülen beklenmedik soğuk dalgasıdır.'},
-  {id:'hamsin',name:'Hamsin',emoji:'🌬️',sM:4,sD:15,eM:6,eD:4,tp:'p',cat:'hava',sh:'50 günlük sıcak kuru rüzgar (Nisan–Haziran)',fl:'Hamsin (Arapça: "elli"), ilkbahar ile yaz başı arasında 50 gün süren sıcak ve kuru rüzgar dönemidir.'},
-  {id:'mayis1',name:'1 Mayıs İşçi Bayramı',emoji:'✊',m:5,d:1,tp:'s',cat:'ulusal',sh:'Emek ve Dayanışma Günü',fl:'Türkiye\'de yasal resmi tatildir.'},
-  {id:'hidrellez',name:'Hıdrellez',emoji:'🌸',sM:5,sD:5,eM:5,eD:6,tp:'p',cat:'kutlama',sh:'5–6 Mayıs — Hz. Hızır ile Hz. İlyas',fl:'Hz. Hızır ile Hz. İlyas\'ın bu günde buluştuğuna inanılır. Dilek kağıtları gül dibine gömülür, evler gülle süslenir, ateşin üzerinden atlanır.'},
-  {id:'yazgun',name:'Yaz Gündönümü',emoji:'☀️',m:6,d:21,tp:'s',cat:'doğa',sh:'21 Haziran — Yılın en uzun günü',fl:'Yaz Gündönümü, yılın en uzun gündüzüdür.'},
-  {id:'zafer',name:'Zafer Bayramı',emoji:'🏆',m:8,d:30,tp:'s',cat:'ulusal',sh:'30 Ağustos 1922 — Büyük Taarruz',fl:'Türk Kurtuluş Savaşı\'nın dönüm noktası olan Büyük Taarruz\'u anmaktadır.'},
-  {id:'mihrican',name:'Mihrican (Bostan Bozan)',emoji:'🍂',sM:9,sD:22,eM:9,eD:30,tp:'p',cat:'doğa',sh:'Sonbahar ekinoksu, bostan hasadının sonu',fl:'Mihrican, sonbahar ekinoksu (22 Eylül) döneminde kutlanan eski Anadolu bayramıdır.'},
-  {id:'cumhuriyet',name:'Cumhuriyet Bayramı',emoji:'🇹🇷',m:10,d:29,tp:'s',cat:'ulusal',sh:'29 Ekim 1923',fl:'Türkiye Cumhuriyeti\'nin 1923\'te ilan edildiği günü kutlar.'},
-  {id:'ataturk',name:"Atatürk'ü Anma Günü",emoji:'🏛️',m:11,d:10,tp:'s',cat:'ulusal',sh:'10 Kasım 1938',fl:'Saat 09:05\'te tüm Türkiye\'de anma törenleri düzenlenir.'},
-  {id:'kisgun',name:'Kış Gündönümü',emoji:'🌙',m:12,d:21,tp:'s',cat:'doğa',sh:'21 Aralık — Yılın en uzun gecesi',fl:'Bu tarihten itibaren günler uzamaya başlar.'},
+  {id:'zemheri',  name:'Zemheri',            emoji:'❄️',  sM:1,  sD:8,  eM:2, eD:8,  tp:'p',cat:'kış',   sh:'Yılın en soğuk 40 günü (8 Oca–8 Şub)',   fl:'Zemheri, Anadolu geleneğinde yılın en soğuk kırk günlük dönemidir. Ocak 8\'den Şubat 8\'e kadar sürer. En soğuk güne "göbek zemheri" denir.'},
+  {id:'amansiz',  name:'Amansız Elli',        emoji:'🥶',  sM:12, sD:22, eM:2, eD:10, tp:'p',cat:'kış',   sh:'Kışın en sert 50 günü (22 Ara–10 Şub)',   fl:'Kış gündönümünden başlayan 50 günlük en sert kış dönemidir. Zemheri\'yi kapsar; bitiminde Cemreler başlar.'},
+  {id:'sevgililer',name:'Sevgililer Günü',     emoji:'❤️',  m:2,   d:14,  tp:'s',cat:'kutlama',sh:'14 Şubat',fl:'Sevgi ve aşkın evrensel sembolüdür.'},
+  {id:'bede',     name:'Bede Yeli (Vade Yeli)',emoji:'💨',  sM:2,  sD:19, eM:2, eD:21, tp:'p',cat:'hava',  sh:'Şubat sonu sert rüzgar (19–21 Şub)',      fl:'"Bede yeli eser, kışın borcunu öder."'},
+  {id:'cemre1',   name:'1. Cemre — Havaya',   emoji:'🔥',  m:2,   d:19,  tp:'s',cat:'doğa',  sh:'Hava ısınır (19–20 Şub)',                 fl:'Cemre, baharın gelişini müjdeleyen sembolik ateş parçasıdır. Birinci cemre havaya düşer.'},
+  {id:'cemre2',   name:'2. Cemre — Suya',     emoji:'💧',  m:2,   d:26,  tp:'s',cat:'doğa',  sh:'Sular ısınır (26–27 Şub)',                fl:'İkinci cemre suya düşer. Pınar ve akarsuların ısınmaya başladığına inanılır.'},
+  {id:'cemre3',   name:'3. Cemre — Toprağa',  emoji:'🌱',  m:3,   d:5,   tp:'s',cat:'doğa',  sh:'Toprak ısınır (5–6 Mar)',                 fl:'Son cemre toprağa düşer. "Cemre toprağa düştü, bahar kapıda."'},
+  {id:'gavur',    name:'Gâvurun Küfrü',        emoji:'⚡',  m:3,   d:9,   tp:'s',cat:'hava',  sh:'Mart\'ta ani soğuk',                      fl:'"Mart kapıdan baktırır, kazma kürek yaktırır."'},
+  {id:'beldir',   name:'Kocakarı Soğukları',  emoji:'👵❄️',sM:3,  sD:11, eM:3, eD:17, tp:'p',cat:'hava',  sh:'7 günlük Mart fırtınası (11–17 Mar)',      fl:'"Beldir aciz, yer gök taciz." "Üçü şubatta, dördü martta." Efsaneye göre yaşlı bir kadının koyunlarını Mart\'a çıkarması üzerine oluşmuştur.'},
+  {id:'nevruz',   name:'Nevruz',               emoji:'🌼',  m:3,   d:21,  tp:'s',cat:'kutlama',sh:'21 Mart — Baharın Yeni Yılı',             fl:'Nevruz, bahar ekinoksunda kutlanan kadim bayramdır. UNESCO kültürel miras listesindedir.'},
+  {id:'mart29',   name:"Mart'ın İki Dokuzu",  emoji:'🌪️', m:3,   d:29,  tp:'s',cat:'hava',  sh:'29 Mart — ani fırtına',                   fl:'"Martın yirmi dokuzu, gelir baharın ağuzu."'},
+  {id:'abril',    name:'Abrıl Beşi Fırtınası',emoji:'⛈️',  m:4,   d:5,   tp:'s',cat:'hava',  sh:'5 Nisan fırtınası',                       fl:'Nisan\'ın beşinde gelen sert hava olgusudur.'},
+  {id:'kirlangic',name:'İlk Kırlangıç Günü',  emoji:'🐦',  m:4,   d:15,  tp:'s',cat:'doğa',  sh:'Kırlangıçların dönüşü',                  fl:'"Kırlangıç geldi mi, bahar geldi."'},
+  {id:'sitte',    name:'Sitte Sevir',          emoji:'🌡️', sM:4,  sD:25, eM:5, eD:5,  tp:'p',cat:'hava',  sh:'Nisan sonu ani soğuk (25 Nis–5 May)',      fl:'Nisan sonu ile Mayıs başında görülen beklenmedik soğuk dalgasıdır.'},
+  {id:'hamsin',   name:'Hamsin',               emoji:'🌬️', sM:4,  sD:15, eM:6, eD:4,  tp:'p',cat:'hava',  sh:'50 günlük sıcak kuru rüzgar (Nis–Haz)',    fl:'Hamsin, ilkbahar ile yaz başı arasında 50 gün süren sıcak ve kuru rüzgar dönemidir.'},
+  {id:'mayis1',   name:'1 Mayıs İşçi Bayramı',emoji:'✊',   m:5,   d:1,   tp:'s',cat:'ulusal', sh:'Emek ve Dayanışma Günü',                  fl:'Türkiye\'de yasal resmi tatildir.'},
+  {id:'hidrellez',name:'Hıdrellez',            emoji:'🌸',  sM:5,  sD:5,  eM:5, eD:6,  tp:'p',cat:'kutlama',sh:'5–6 Mayıs — Hz. Hızır ile Hz. İlyas',     fl:'Hz. Hızır ile Hz. İlyas\'ın bu günde buluştuğuna inanılır. Dilek kağıtları gül dibine gömülür.'},
+  {id:'yazgun',   name:'Yaz Gündönümü',        emoji:'☀️',  m:6,   d:21,  tp:'s',cat:'doğa',  sh:'21 Haziran — Yılın en uzun günü',         fl:'Yaz Gündönümü, yılın en uzun gündüzüdür.'},
+  {id:'zafer',    name:'Zafer Bayramı',         emoji:'🏆',  m:8,   d:30,  tp:'s',cat:'ulusal', sh:'30 Ağustos 1922 — Büyük Taarruz',         fl:'Türk Kurtuluş Savaşı\'nın dönüm noktasıdır.'},
+  {id:'mihrican', name:'Mihrican (Bostan Bozan)',emoji:'🍂',sM:9,  sD:22, eM:9, eD:30, tp:'p',cat:'doğa',  sh:'Sonbahar ekinoksu (22–30 Eyl)',           fl:'Yaz sebzelerinin hasadının kapandığı zamandır.'},
+  {id:'cumhuriyet',name:'Cumhuriyet Bayramı',  emoji:'🇹🇷',m:10,  d:29,  tp:'s',cat:'ulusal', sh:'29 Ekim 1923',                            fl:'Türkiye Cumhuriyeti\'nin ilan edildiği günü kutlar.'},
+  {id:'ataturk',  name:"Atatürk'ü Anma",       emoji:'🏛️', m:11,  d:10,  tp:'s',cat:'ulusal', sh:'10 Kasım 1938',                           fl:'Saat 09:05\'te tüm Türkiye\'de anma törenleri düzenlenir.'},
+  {id:'kisgun',   name:'Kış Gündönümü',         emoji:'🌙',  m:12,  d:21,  tp:'s',cat:'doğa',  sh:'21 Aralık — Yılın en uzun gecesi',        fl:'Bu tarihten itibaren günler uzamaya başlar.'},
 ];
 
 function easterD(y){const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return new Date(y,mo-1,da);}
 function nthSun(y,m,n){let d=new Date(y,m-1,1),c=0;while(d.getMonth()===m-1){if(d.getDay()===0&&++c===n)return new Date(d);d.setDate(d.getDate()+1);}return null;}
 
-function getEvts(today,year){
-  const ea=easterD(year),md=nthSun(year,5,2);
+function getEvts(today,y){
+  const ea=easterD(y), md=nthSun(y,5,2);
   const dyn=[
-    {id:'paskalya',name:'Paskalya',emoji:'🐣',m:ea.getMonth()+1,d:ea.getDate(),tp:'s',cat:'kutlama',sh:year+' Paskalyası: '+fmtDM(ea),fl:'Hz. İsa\'nın dirilişini kutlayan Hristiyan bayramıdır.'},
-    {id:'anneler',name:'Anneler Günü',emoji:'💐',m:md.getMonth()+1,d:md.getDate(),tp:'s',cat:'kutlama',sh:"Mayıs'ın ikinci Pazar'ı: "+fmtDM(md),fl:'Her yıl Mayıs\'ın ikinci Pazar\'ında kutlanır.'},
+    {id:'paskalya',name:'Paskalya',emoji:'🐣',m:ea.getMonth()+1,d:ea.getDate(),tp:'s',cat:'kutlama',sh:y+' Paskalyası: '+fmtDM(ea),fl:'Hz. İsa\'nın dirilişini kutlayan Hristiyan bayramıdır.'},
+    {id:'anneler', name:'Anneler Günü',emoji:'💐',m:md.getMonth()+1,d:md.getDate(),tp:'s',cat:'kutlama',sh:"Mayıs'ın ikinci Pazar'ı: "+fmtDM(md),fl:'Her yıl Mayıs\'ın ikinci Pazar\'ında kutlanır.'},
   ];
-  const all=[...FE,...dyn],res=[];
+  const all=[...FE,...dyn], res=[];
   const tn=new Date(today.getFullYear(),today.getMonth(),today.getDate());
   for(const ev of all){
     let s,e;
-    if(ev.tp==='s'){let y=year;const t=new Date(y,ev.m-1,ev.d);if(t<new Date(tn-15*86400000))y++;s=e=new Date(y,ev.m-1,ev.d);}
-    else{let sy=year,ey=year;if(ev.sM>ev.eM){if(today.getMonth()+1<=ev.eM)sy--;else ey++;}s=new Date(sy,ev.sM-1,ev.sD);e=new Date(ey,ev.eM-1,ev.eD);}
-    const ds=Math.floor((s-tn)/86400000),de=Math.floor((e-tn)/86400000);
+    if(ev.tp==='s'){let yr=y;const t=new Date(yr,ev.m-1,ev.d);if(t<new Date(+tn-15*864e5))yr++;s=e=new Date(yr,ev.m-1,ev.d);}
+    else{let sy=y,ey=y;if(ev.sM>ev.eM){if(today.getMonth()+1<=ev.eM)sy--;else ey++;}s=new Date(sy,ev.sM-1,ev.sD);e=new Date(ey,ev.eM-1,ev.eD);}
+    const ds=Math.floor((s-tn)/864e5), de=Math.floor((e-tn)/864e5);
     if(ds<=15&&de>=-15){
       let st='up';
       if(ev.tp==='p'){if(ds<=0&&de>=0)st='act';else if(de<0)st='old';}
@@ -397,24 +502,26 @@ function getEvts(today,year){
 function skels(n=4){
   return Array.from({length:n},(_,i)=>`
 <div class="sk-wrap">
-  <div class="sk" style="height:10px;width:${20+i*9}%;margin-bottom:8px"></div>
-  <div class="sk" style="height:15px;width:96%;margin-bottom:7px"></div>
-  <div class="sk" style="height:12px;width:${55+i*7}%;margin-bottom:6px"></div>
-  <div class="sk" style="height:10px;width:30%"></div>
+  <div class="sk" style="height:10px;width:${22+i*9}%;margin-bottom:8px"></div>
+  <div class="sk" style="height:15px;width:95%;margin-bottom:7px"></div>
+  <div class="sk" style="height:12px;width:${55+i*8}%;margin-bottom:6px"></div>
+  <div class="sk" style="height:10px;width:28%"></div>
 </div>`).join('');
 }
 
-function showLoadMsg(id,msg){
-  document.getElementById(id).innerHTML=`<div style="padding:20px 0;text-align:center;color:#555;font-size:13px"><span class="d1">●</span><span class="d2">●</span><span class="d3">●</span><br><span style="font-size:11px;color:#333">${msg}</span></div>`;
-}
-
-function renderNews(items,lid){
-  const el=document.getElementById(lid);
-  if(!items||!items.length){
-    el.innerHTML=`<div class="empty">Haber yüklenemedi.<br><span class="err-note">Yenile butonuna basın.<br>İnternet bağlantınız açıksa birkaç saniye içinde gelir.</span></div>`;
+function renderNews(items, lid){
+  const el = document.getElementById(lid);
+  if(!items || !items.length){
+    el.innerHTML = `<div class="empty">
+      Haber yüklenemedi.<br>
+      <span style="font-size:11px;color:#333">
+        Yenile butonuna basın.<br>
+        İnternet bağlantınız varsa birkaç saniye içinde gelir.
+      </span>
+    </div>`;
     return;
   }
-  el.innerHTML=items.map((it,i)=>`
+  el.innerHTML = items.map((it,i)=>`
 <div class="nc">
   <div class="nc-n">${i+1}</div>
   <div class="nc-b">
@@ -423,31 +530,37 @@ function renderNews(items,lid){
       <span class="nc-dt">${fmtDate(it.pubDate)}</span>
     </div>
     <div class="nc-ti" onclick="tSum(this)">${esc(it.title)||'—'}</div>
-    <div class="nc-sm">${esc(it.summary)||'Özet için kaynağı ziyaret edin.'}</div>
+    <div class="nc-sm">${esc(it.summary)||'Özet mevcut değil.'}</div>
     <div class="nc-ac">
       <button class="btn-oz" onclick="tSum(this.closest('.nc-b').querySelector('.nc-ti'))">Özet</button>
-      ${it.url&&it.url.startsWith('http')?`<a class="nc-lk" href="${esc(it.url)}" target="_blank" rel="noopener">Habere Git →</a>`:''}
+      ${it.url && it.url.startsWith('http') ? `<a class="nc-lk" href="${esc(it.url)}" target="_blank" rel="noopener">Habere Git →</a>` : ''}
     </div>
   </div>
 </div>`).join('');
 }
 
 function tSum(ti){
-  const b=ti.closest('.nc-b'),sm=b.querySelector('.nc-sm'),btn=b.querySelector('.btn-oz');
-  const o=sm.classList.toggle('on');btn.textContent=o?'Gizle':'Özet';
+  const b=ti.closest('.nc-b'), sm=b.querySelector('.nc-sm'), btn=b.querySelector('.btn-oz');
+  const o = sm.classList.toggle('on');
+  btn.textContent = o ? 'Gizle' : 'Özet';
 }
 
 function renderHist(evts){
-  const el=document.getElementById('hist-inner');
-  if(!evts||!evts.length){el.innerHTML='<p class="empty">Tarihsel veri yüklenemedi.<br><span class="err-note">Yenile\'ye basın.</span></p>';return;}
-  el.innerHTML=evts.map(e=>`
-<div class="hi"><span class="hi-yr">${e.year}</span><p class="hi-tx">${esc(e.event)}</p></div>
-`).join('')+`<p style="font-size:10px;color:#2a2a2a;margin-top:10px;font-style:italic">Kaynak: Vikipedi · Yakın tarihten uzağa</p>`;
+  const el = document.getElementById('hist');
+  if(!evts || !evts.length){
+    el.innerHTML = '<p class="empty">Tarihsel veri yüklenemedi.</p>';
+    return;
+  }
+  el.innerHTML = evts.map(e=>`
+<div class="hi">
+  <span class="hi-yr">${e.year}</span>
+  <p class="hi-tx">${esc(e.event)}</p>
+</div>`).join('') + `<p style="font-size:10px;color:#2a2a2a;margin-top:10px;font-style:italic">Kaynak: Vikipedi · Yakın tarihten uzağa</p>`;
 }
 
 function renderFolk(){
-  const today=new Date(),y=today.getFullYear();
-  const el=document.getElementById('folk-inner');
+  const today=new Date(), y=today.getFullYear();
+  const el=document.getElementById('folk');
   const evts=getEvts(today,y);
   if(!evts.length){el.innerHTML='<p class="empty">Bu dönemde yakın tarihli takvim olayı yok.</p>';return;}
   const sc=s=>s==='act'?'#c0392b':s==='up'?'#e67e22':'#333';
@@ -476,75 +589,78 @@ function renderFolk(){
 }
 
 function tEv(id){
-  const b=document.getElementById('evb-'+id),c=document.getElementById('ecv-'+id);
-  const o=b.classList.toggle('on');c.textContent=o?'▲':'▼';
+  const b=document.getElementById('evb-'+id), c=document.getElementById('ecv-'+id);
+  const o=b.classList.toggle('on'); c.textContent=o?'▲':'▼';
 }
 
 // ═══════════════ BİLDİRİMLER ══════════════
-// iOS Safari Notification API desteklemiyor.
-// Bu yüzden IN-APP bildirim (toast) kullanıyoruz.
-// "Ana Ekrana Ekle" yapılmış PWA ise gerçek bildirim deniyor.
+// iOS Safari Notification API'yi DESTEKLEMEZ.
+// Bu yüzden: uygulama içi bildirim (toast) kullanıyoruz.
+// Android Chrome'da gerçek bildirim de denenecek.
 
-let notifActive=false;
+let notifOn = false;
 
-function handleNotif(){
-  // Gerçek Notification API var mı?
-  if(!('Notification' in window)){
-    // Desteklenmiyor → sadece uygulama içi bildirimleri etkinleştir
-    notifActive=true;
-    updateNotifUI();
-    toast('🔔 Uygulama içi bildirimler aktif!\nSaat başı güncelleme bildirimi alacaksınız.');
-    return;
+function toggleNotif(){
+  notifOn = !notifOn;
+  const btn = document.getElementById('btn-n');
+  const lbl = document.getElementById('n-lbl');
+  if(notifOn){
+    btn.classList.add('on');
+    lbl.textContent = 'Aktif ✓';
+    toast('🔔 Bildirimler açık! Saat başı güncelleme bildirimi alırsınız.');
+
+    // Android/Desktop Chrome'da gerçek bildirim dene
+    if('Notification' in window && Notification.permission === 'default'){
+      Notification.requestPermission().catch(()=>{});
+    }
+  } else {
+    btn.classList.remove('on');
+    lbl.textContent = 'Bildirimler';
+    toast('🔕 Bildirimler kapatıldı.');
   }
-  if(Notification.permission==='granted'){
-    notifActive=true;updateNotifUI();
-    toast('🔔 Bildirimler zaten aktif!');return;
+}
+
+function notify(msg){
+  // Uygulama içi toast her zaman
+  if(notifOn) toast('🔔 ' + msg);
+
+  // Gerçek bildirim mümkünse dene
+  if(notifOn && 'Notification' in window && Notification.permission==='granted'){
+    try{ new Notification('Ne Olmuş', {body: msg}); }catch{}
   }
-  if(Notification.permission==='denied'){
-    notifActive=true;updateNotifUI();
-    toast('🔔 Uygulama içi bildirimler aktif.\nSaatlik güncelleme bildirimi gelecek.');
-    return;
-  }
-  // İzin iste
-  Notification.requestPermission().then(p=>{
-    notifActive=true;updateNotifUI();
-    if(p==='granted'){toast('🔔 Sistem bildirimleri açıldı!');}
-    else{toast('🔔 Uygulama içi bildirimler aktif.\nSaatlik güncelleme bildirimi gelecek.');}
-  }).catch(()=>{
-    notifActive=true;updateNotifUI();
-    toast('🔔 Uygulama içi bildirimler aktif!');
+}
+
+// ═══════════════ UI YARDIMCILARI ══════════
+function setSpinner(ids, on){
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.classList.toggle('on', on);
   });
 }
 
-function updateNotifUI(){
-  document.getElementById('notif-lbl').textContent='Aktif ✓';
-  document.getElementById('btn-notif').style.background='#1a2e1a';
-}
-
-function sendNotif(title,body){
-  if(notifActive&&'Notification' in window&&Notification.permission==='granted'){
-    try{new Notification(title,{body});}catch{}
-  }
-  // Her durumda toast göster
-  if(notifActive)toast('🔔 '+body);
+function setStatus(msg){
+  document.getElementById('status-bar').textContent = msg;
 }
 
 // ═══════════════ SAAT ══════════════════════
 function tick(){
-  document.getElementById('hdr-clock').textContent=
+  document.getElementById('clk').textContent =
     new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'});
 }
-setInterval(tick,1000);tick();
+setInterval(tick, 1000); tick();
 
-// ═══════════════ AKORDEÓN & TAB ════════════
-const aOpen={hist:false,folk:false};
-function toggleAcc(k){
+// ═══════════════ AKORDEÓN ══════════════════
+const aOpen={h:false,f:false};
+function togAcc(k){
   aOpen[k]=!aOpen[k];
   document.getElementById('body-'+k).classList.toggle('open',aOpen[k]);
-  document.getElementById('chev-'+k).textContent=aOpen[k]?'▲':'▼';
+  const chvId = k==='h' ? 'h-chv' : 'f-chv';
+  document.getElementById(chvId).textContent = aOpen[k]?'▲':'▼';
 }
-function switchTab(id,btn){
-  ['tr','wo','al'].forEach(t=>{document.getElementById('p-'+t).style.display=t===id?'block':'none';});
+
+// ═══════════════ SEKMELER ══════════════════
+function goTab(id,btn){
+  ['tr','wo','al'].forEach(t=>document.getElementById('p-'+t).style.display=t===id?'block':'none');
   document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
 }
@@ -553,68 +669,80 @@ function switchTab(id,btn){
 let tTmr=null;
 function toast(msg){
   const el=document.getElementById('toast');
-  el.textContent=msg;el.classList.add('on');
-  clearTimeout(tTmr);tTmr=setTimeout(()=>el.classList.remove('on'),4000);
+  el.textContent=msg; el.classList.add('on');
+  clearTimeout(tTmr);
+  tTmr=setTimeout(()=>el.classList.remove('on'),4000);
 }
 
-// ═══════════════ YÜKLEME ═══════════════════
+// ═══════════════ YENİLE ════════════════════
 async function doRefresh(){
   toast('🔄 Güncelleniyor…');
-  S.del('tr');S.del('wo');
-  const t=new Date();S.del(`hist_${t.getMonth()+1}_${t.getDate()}`);
+  C.del('tr'); C.del('wo');
+  const t=new Date(); C.del(`hist_${t.getMonth()+1}_${t.getDate()}`);
 
-  document.getElementById('l-tr').innerHTML=skels();
-  document.getElementById('l-wo').innerHTML=skels();
-  document.getElementById('l-al').innerHTML=skels();
-  document.getElementById('hist-inner').innerHTML=skels(3);
+  ['l-tr','l-wo','l-al'].forEach(id=>document.getElementById(id).innerHTML=skels());
+  document.getElementById('hist').innerHTML = skels(3);
 
-  const[tr,wo,hist]=await Promise.all([loadTR(),loadWorld(),loadHist()]);
-  renderNews(tr,'l-tr');
-  renderNews(wo,'l-wo');
-  renderNews([...tr,...wo].sort((a,b)=>b.pubDate-a.pubDate).slice(0,12),'l-al');
+  const[tr,wo,hist] = await Promise.all([loadTR(), loadWorld(), loadHist()]);
+
+  renderNews(tr, 'l-tr');
+  renderNews(wo, 'l-wo');
+  const all = [...tr,...wo].sort((a,b)=>b.pubDate-a.pubDate).slice(0,12);
+  renderNews(all, 'l-al');
   renderHist(hist);
 
-  document.getElementById('upd-time').textContent=
-    new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'});
-  toast('✅ Güncellendi — '+tr.length+' TR + '+wo.length+' Dünya haberi');
-  sendNotif('Ne Olmuş','Haberler güncellendi.');
+  const now = new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('upd-t').textContent = now;
+
+  const msg = `${tr.length} Türkiye + ${wo.length} Dünya haberi yüklendi`;
+  setStatus(msg);
+  toast('✅ ' + msg);
+  notify('Haberler güncellendi.');
 }
 
 // ═══════════════ BAŞLANGIÇ ═════════════════
-(async()=>{
-  const today=new Date();
-  document.getElementById('hist-badge').textContent=
+(async ()=>{
+  const today = new Date();
+
+  // Tarih rozeti
+  document.getElementById('h-bdg').textContent =
     today.toLocaleDateString('tr-TR',{day:'numeric',month:'long'});
 
-  renderFolk();  // takvim anında gelir
+  // Takvim (API gerektirmez)
+  renderFolk();
 
   // Skeleton
-  document.getElementById('l-tr').innerHTML=skels();
-  document.getElementById('l-wo').innerHTML=skels();
-  document.getElementById('l-al').innerHTML=skels();
+  ['l-tr','l-wo','l-al'].forEach(id=>document.getElementById(id).innerHTML=skels());
+  setSpinner(['sp-tr','sp-wo','sp-al'],true);
 
   // Paralel yükle
-  const[tr,wo,hist]=await Promise.all([loadTR(),loadWorld(),loadHist()]);
+  setStatus('Yükleniyor…');
+  const[tr,wo,hist] = await Promise.all([loadTR(), loadWorld(), loadHist()]);
+  setSpinner(['sp-tr','sp-wo','sp-al'],false);
 
   renderNews(tr,'l-tr');
   renderNews(wo,'l-wo');
-  renderNews([...tr,...wo].sort((a,b)=>b.pubDate-a.pubDate).slice(0,12),'l-al');
+  const all=[...tr,...wo].sort((a,b)=>b.pubDate-a.pubDate).slice(0,12);
+  renderNews(all,'l-al');
   renderHist(hist);
 
-  document.getElementById('upd-time').textContent=
-    new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'});
+  const now=new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('upd-t').textContent=now;
 
-  // Saatlik otomatik yenile
+  const msg=`${tr.length} TR + ${wo.length} Dünya haberi`;
+  setStatus(msg);
+
+  // Saatlik yenileme
   setInterval(async()=>{
-    S.del('tr');S.del('wo');
+    C.del('tr'); C.del('wo');
     const[t,w]=await Promise.all([loadTR(),loadWorld()]);
     renderNews(t,'l-tr');
     renderNews(w,'l-wo');
-    renderNews([...t,...w].sort((a,b)=>b.pubDate-a.pubDate).slice(0,12),'l-al');
-    document.getElementById('upd-time').textContent=
+    const a=[...t,...w].sort((a,b)=>b.pubDate-a.pubDate).slice(0,12);
+    renderNews(a,'l-al');
+    document.getElementById('upd-t').textContent=
       new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'});
-    sendNotif('Ne Olmuş','Saatlik güncelleme yapıldı.');
-    toast('🔔 Saatlik güncelleme yapıldı');
+    notify('Saatlik güncelleme yapıldı. '+t.length+' TR + '+w.length+' Dünya haberi.');
   },3600000);
 })();
 </script>
